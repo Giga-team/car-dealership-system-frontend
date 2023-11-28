@@ -1,0 +1,71 @@
+<div class="container">
+    <div class="header">
+        <div>
+            <img id="logo-icon" src="../assets/images/logo.png" alt="logo">
+        </div>
+        <div class="user-container">
+            <span><h4>zdjor</h4></span>
+            <img id="user-icon" src="../assets/images/user-icon.png" alt="user-logo">
+        </div>
+    </div>
+    <div class="aside-bar">
+        <ul class="aside-bar-top-list">
+            <li routerLink = "/catalogue">
+                <h3>Catalog</h3>
+            </li>
+            <li><h3>Users</h3></li>
+            <li><h3>Orders</h3></li>
+        </ul>
+        <ul class="aside-bar-bottom-list">
+            <li routerLink = "/about"><h3>About</h3></li>
+            <li routerLink = "/help"><h3>Help</h3></li>
+        </ul>
+    </div>
+    <div class="main">
+        <div class="items">
+            <br>
+            <h2>Edit Car</h2>
+            <form>
+                <div class="form-group">
+                    <label for="brand">Brand:</label>
+                    <input type="text" id="brand" name="brand">
+                </div>
+                <div class="form-group">
+                    <label for="model">Model:</label>
+                    <input type="text" id="model" name="model">
+                </div>
+                <div class="form-group">
+                    <label for="engine_capacity">Engine capacity:</label>
+                    <input type="text" id="engine_capacity" name="engine_capacity">
+                </div>
+                <div class="form-group">
+                    <label for="power">Power(HP):</label>
+                    <input type="text" id="power" name="power">
+                </div>
+                <div class="form-group">
+                    <label for="number_of_seats">Number of seats:</label>
+                    <input type="text" id="number_of_seats" name="number_of_seats">
+                </div>
+                <div class="form-group">
+                    <label for="gear_box">GearBox:</label>
+                    <select id="gear_box" name="gear_box">
+                        <option value="AUTOMATION">AUTOMATION</option>
+                        <option value="MECHANIC">MECHANIC</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="price">Price:</label>
+                    <input type="text" id="price" name="price">
+                </div>
+                <div class="button-group">
+                    <button type="button">Cancel</button>
+                    <button type="submit">Save Changes</button>
+                </div>
+
+            </form>
+        </div>
+    </div>
+    <div class="filter-bar">
+
+    </div>
+</div>

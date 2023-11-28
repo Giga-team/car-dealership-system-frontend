@@ -11,7 +11,7 @@
     <div class="aside-bar">
         <ul class="aside-bar-top-list">
             <li>
-                <h3>Catalog</h3>
+                <h3 routerLink = "/catalogue">Catalog</h3>
             </li>
             <li><h3>Users</h3></li>
             <li><h3>Orders</h3></li>
@@ -22,22 +22,21 @@
         </ul>
     </div>
     <div class="main">
-        <div class="main-item"
-             *ngFor="let car of cars">
-            <div class="text-container">
-                {{car.brand}} | {{car.model}}
-            </div>
-            <div class="button-container">
-                <button class="edit-button"  routerLink = "/car-edit" >Edit</button>
-                <button class="view-button">View</button>
-                <button class="delete-button" (click)="deleteCar(car.id)">Delete</button>
-            </div>
+        <div>
+            <h5>
+                Dear customers!
+            </h5>
+            <br>
+            <h6>
+                To order a car in TechnoDrift, select the desired car on the main page, click the "Make an order" button - confirm the order, and you will receive a notification if the order is created successfully or if there is an error.
+            </h6>
+            <br>
+            <h6>
+                Payment for the order takes place after you pick up your car. If necessary, contact our general manager Tverdyslav +380987654321
+            </h6>
         </div>
     </div>
     <div class="filter-bar">
-        <div class="filter-item">
-            Idi nahui
-        </div>
-        <button>Filter</button>
+
     </div>
 </div>

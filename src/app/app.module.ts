@@ -10,6 +10,9 @@ import { LoginComponent } from './pages/login/login.component';
 import { AdminHomepageComponent } from './pages/admin/admin-homepage/admin-homepage.component';
 import { RegistrationComponent } from './pages/registration/registration.component';
 import { UserCabinetComponent } from './pages/user-cabinet/user-cabinet.component';
+import { AboutComponent } from './pages/about/about.component';
+import { HelpComponent } from './pages/help/help.component';
+import { CarEditComponent } from './pages/car-edit/car-edit.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +20,10 @@ import { UserCabinetComponent } from './pages/user-cabinet/user-cabinet.componen
     LoginComponent,
     AdminHomepageComponent,
     RegistrationComponent,
-    UserCabinetComponent
+    UserCabinetComponent,
+    AboutComponent,
+    HelpComponent,
+    CarEditComponent
   ],
   imports: [
     BrowserModule,
