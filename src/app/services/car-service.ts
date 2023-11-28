@@ -56,13 +56,14 @@ export class CarService {
     }
 
     public getCarsPage(query: string ='',page: number = 0, limit: number = 20): Observable<ApiResponse<IdentifiedCar[]>> {
-        return this.http.get<IdentifiedCar[]>(
+        return this.http.get<ApiResponse<IdentifiedCar[]>>(
             `${this.carUrl}/cars/page?query=${query}&page=${page}&limit=${limit}`,
             { observe: 'response' })
             .pipe(
-                map((response: HttpResponse<IdentifiedCar[]>) => {
+                map((response: HttpResponse<ApiResponse<IdentifiedCar[]>>) => {
+                    console.log(typeof response)
                     return {
-                        body: response.body,
+                        body: response.body?.body??[],
                         responseCode: response.status,
                         message: response.ok ? 'Car page retrieved successfully' :
                                                'Failed to retrieve car page'

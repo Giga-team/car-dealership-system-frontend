@@ -12,8 +12,8 @@ const routes: Routes = [
     redirectTo: 'login'
   },
   {
-    path: 'admin-home',
-    title: 'Homepage',
+    path: 'catalogue',
+    title: 'Catalogue',
     component: AdminHomepageComponent
   },
   {

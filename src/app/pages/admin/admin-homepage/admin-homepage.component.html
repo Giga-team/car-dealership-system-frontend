@@ -22,26 +22,15 @@
         </ul>
     </div>
     <div class="main">
-        <div class="main-item">
-            <div class="text-container"
-                 *ngFor="let car of cars">
-                <p>{{car.brand}}</p>
-                <p>{{car.id}}</p>
-            </div>
-            <div class="button-container">
-                <button class="edit-button">Edit</button>
-                <button class="view-button">View</button>
-                <button class="delete-button">Delete</button>
-            </div>
-        </div>
-        <div class="main-item">
+        <div class="main-item"
+             *ngFor="let car of cars">
             <div class="text-container">
-                Text
+                {{car.brand}} | {{car.model}}
             </div>
             <div class="button-container">
                 <button class="edit-button">Edit</button>
                 <button class="view-button">View</button>
-                <button class="delete-button">Delete</button>
+                <button class="delete-button" (click)="deleteCar(car.id)">Delete</button>
             </div>
         </div>
     </div>
