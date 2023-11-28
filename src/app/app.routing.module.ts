@@ -4,6 +4,7 @@ import {AdminHomepageComponent} from "./pages/admin/admin-homepage/admin-homepag
 import {LoginComponent} from "./pages/login/login.component";
 import {RegistrationComponent} from "./pages/registration/registration.component";
 import {AboutComponent} from "./pages/about/about.component";
+import {HelpComponent} from "./pages/help/help.component";
 
 const routes: Routes = [
   {
@@ -30,6 +31,11 @@ const routes: Routes = [
       path: 'about',
       title: 'About',
       component: AboutComponent
+  },
+  {
+    path: 'help',
+    title: 'Help',
+    component: HelpComponent
   }
 ]
 @NgModule({

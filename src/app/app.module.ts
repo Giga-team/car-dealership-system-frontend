@@ -11,6 +11,7 @@ import { AdminHomepageComponent } from './pages/admin/admin-homepage/admin-homep
 import { RegistrationComponent } from './pages/registration/registration.component';
 import { UserCabinetComponent } from './pages/user-cabinet/user-cabinet.component';
 import { AboutComponent } from './pages/about/about.component';
+import { HelpComponent } from './pages/help/help.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { AboutComponent } from './pages/about/about.component';
     AdminHomepageComponent,
     RegistrationComponent,
     UserCabinetComponent,
-    AboutComponent
+    AboutComponent,
+    HelpComponent
   ],
   imports: [
     BrowserModule,
