@@ -84,7 +84,9 @@
             "tsConfig": "tsconfig.spec.json",
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              "src/assets/fonts/e-Ukraine",
+              "src/assets/fonts/e-Ukraine Head"
             ],
             "styles": [
               "src/styles.css"

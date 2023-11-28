@@ -1,0 +1,77 @@
+body {
+    width: 100%;
+    height: 100vh;
+    background: #d4dfdf;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-container {
+    border-radius: 2.5em;
+    width: 20%;
+    height: 50%;
+    background: transparent;
+    align-content: center;
+
+    border: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(20px);
+
+
+    box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset,
+                rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+                rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+}
+
+.items {
+    padding: 2em 2.5em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+button {
+    width: 80%;
+    height: 40px;
+    margin-top: 40px;
+    border-radius: 25px;
+    border: 2px solid #1b1b1b;
+    box-shadow: #fff 1px 1px 1px 1px,#000 0 6px 0 0px;
+    box-sizing: border-box;
+    background: #1b1b1b;
+    color: azure;
+    font-size: 1em;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+button:active {
+    box-shadow: rgba(0, 0, 0, .125) 0 3px 5px inset;
+    outline: 0;
+}
+
+button:not([disabled]):active {
+    box-shadow: #fff 2px 0 0 0, #000 2px 0 0 0;
+    transform: translate(1px, 5px);
+}
+
+input {
+    width: 90%;
+    height: 2.5em;
+    padding: 3px 5px;
+    font-size: 1em;
+
+    margin-top: 15px;
+    border-radius: 20px;
+
+    border: 1px solid rgba(238, 225, 231, 0.3);
+    box-shadow: rgba(255, 255, 255, 0.8) 1px 1px 1px 1px;
+}
+
+h3 {
+    font-family: UkraineH-Medium, sans-serif;
+}

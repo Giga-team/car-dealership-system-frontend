@@ -1,29 +1,30 @@
 import {NgModule} from "@angular/core";
 import {RouterModule, Routes} from "@angular/router";
-import {AppComponent} from "./app.component";
-import {HeaderComponent} from "./core/components/header/header.component";
-import {BodyComponent} from "./core/components/body/body.component";
-import {FooterComponent} from "./core/components/footer/footer.component";
+import {AdminHomepageComponent} from "./pages/admin/admin-homepage/admin-homepage.component";
+import {LoginComponent} from "./pages/login/login.component";
+import {RegistrationComponent} from "./pages/registration/registration.component";
 
 
 const routes: Routes = [
   {
     path: '',
-    redirectTo: '/home',
-    pathMatch: "full"
+    pathMatch: "full",
+    redirectTo: 'login'
   },
   {
-    path: 'home',
-    title: "Homepage",
-    component: BodyComponent
+    path: 'admin-home',
+    title: 'Homepage',
+    component: AdminHomepageComponent
   },
   {
-    path: 'header',
-    component: HeaderComponent
+    path: 'login',
+    title: 'Login',
+    component: LoginComponent
   },
   {
-    path: 'footer',
-    component: FooterComponent
+    path: 'registration',
+    title: 'Registration',
+    component: RegistrationComponent
   }
 ]
 @NgModule({
