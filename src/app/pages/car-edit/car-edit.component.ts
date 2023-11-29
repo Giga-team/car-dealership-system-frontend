@@ -26,15 +26,12 @@ export class CarEditComponent implements OnInit {
     }
 
     updateCar() {
-<<<<<<< Updated upstream
         this.carService.updateCar(this._car.id, this.car).subscribe(
             response => {
                 this.router.navigate(['catalogue']);
             }
         )
-=======
         console.log('Car updated:', this.car);
->>>>>>> Stashed changes
     }
 
     get car(): IdentifiedCar {
