@@ -56,7 +56,7 @@ export class AdminHomepageComponent implements OnInit, OnDestroy{
 
 
     viewCar(carId: number): void {
-
+        this.router.navigate(['/car-view', carId])
     }
 
     ngOnDestroy() {

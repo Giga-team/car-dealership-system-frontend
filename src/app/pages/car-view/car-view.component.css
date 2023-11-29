@@ -150,19 +150,9 @@ button:not([aria-disabled]):active {
     transform: translate(2px, 2px);
 }
 
-.view-button {
-    background: azure;
-    box-shadow: #d4dfdf 4px 4px 0 0, azure 4px 4px 0 1px;
-}
-
-.edit-button {
-    background: gold;
-    box-shadow: #edbb34 4px 4px 0 0, gold 4px 4px 0 1px;
-}
-
-.delete-button {
-    background: #e8480c;
-    box-shadow: #be3d11 4px 4px 0 0, #de4512 4px 4px 0 1px;
+.back-button {
+    background: #727272;
+    box-shadow: #3e3e3e 4px 4px 0 0, #1b1b1b 4px 4px 0 1px;
 }
 
 h4 {
@@ -171,4 +161,48 @@ h4 {
 
 h3 {
     font-family: Ukraine-Thin, sans-serif;
+}
+
+h2 {
+    font-family: Ukraine-Thin, sans-serif;
+    color: #1b1b1b;
+    text-align: center;
+}
+
+table {
+    color: #1b1b1b;
+    border: 1px #1b1b1b solid;
+    width: 100%;
+}
+
+.car-table{
+    margin: 20px 0;
+    color: #1b1b1b;
+    width: 90%;
+    border-radius: 30px;
+    height: 400px;
+    background: #1b1b1b;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.table-column {
+    width: 35%;
+    padding: 30px;
+}
+
+.field-label {
+    margin-right: 30px;
+}
+
+.table-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    border-radius: 20px;
+    height: 40px;
+    background: azure;
+    margin-bottom: 40px;
 }

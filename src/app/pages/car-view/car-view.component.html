@@ -10,32 +10,51 @@
     </div>
     <div class="aside-bar">
         <ul class="aside-bar-top-list">
-            <li>
-                <h3>Catalog</h3>
-            </li>
-            <li><h3>Users</h3></li>
-            <li><h3>Orders</h3></li>
+            <li routerLink = "/catalogue"><h3>Catalog</h3></li>
+            <li routerLink = "/users"><h3>Users</h3></li>
+            <li routerLink = "/orders"><h3>Orders</h3></li>
         </ul>
         <ul class="aside-bar-bottom-list">
-            <li><h3>About</h3></li>
-            <li><h3>Help</h3></li>
+            <li routerLink = "/about"><h3>About</h3></li>
+            <li routerLink = "/help"><h3>Help</h3></li>
         </ul>
     </div>
     <div class="main">
-        <div class="main-item">
-            <div class="text-container">
+        <br>
+        <h2>Car Information</h2>
+        <div class="car-table">
+            <div class="table-column">
+                <div class="table-row">
+                    <span class="field-label">Brand:</span>{{car.brand}}
+                </div>
+                <div class="table-row">
+                    <span class="field-label">Model:</span>{{car.model}}
+                </div>
+                <div class="table-row">
+                    <span class="field-label">Engine capacity:</span>{{car.engineCapacity}}
+                </div>
+                <div class="table-row">
+                    <span class="field-label">Power:</span>{{car.power}}
+                </div>
             </div>
-            <div class="button-container">
-                <button class="edit-button">Edit</button>
-                <button class="view-button">View</button>
-                <button class="delete-button">Delete</button>
+            <div class="table-column">
+                <div class="table-row">
+                    <span class="field-label">Status:</span>{{car.status}}
+                </div>
+                <div class="table-row">
+                    <span class="field-label">Number of seats:</span>{{car.numberOfSeats}}
+                </div>
+                <div class="table-row">
+                    <span class="field-label">Gear box:</span>{{car.gearBox}}
+                </div>
+                <div class="table-row">
+                    <span class="field-label">Price:</span>{{car.price}}
+                </div>
             </div>
         </div>
+        <button class="back-button" (click)="back()">Back</button>
     </div>
     <div class="filter-bar">
-        <div class="filter-item">
-            Idi nahui
-        </div>
-        <button>Filter</button>
+
     </div>
 </div>

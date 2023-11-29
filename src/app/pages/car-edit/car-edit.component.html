@@ -1,4 +1,4 @@
-    <div class="container">
+<div class="container">
     <div class="header">
         <div>
             <img id="logo-icon" src="../assets/images/logo.png" alt="logo">
@@ -10,11 +10,9 @@
     </div>
     <div class="aside-bar">
         <ul class="aside-bar-top-list">
-            <li routerLink = "/catalogue">
-                <h3>Catalog</h3>
-            </li>
-            <li><h3>Users</h3></li>
-            <li><h3>Orders</h3></li>
+            <li routerLink = "/catalogue"><h3>Catalog</h3></li>
+            <li routerLink = "/users"><h3>Users</h3></li>
+            <li routerLink = "/orders"><h3>Orders</h3></li>
         </ul>
         <ul class="aside-bar-bottom-list">
             <li routerLink = "/about"><h3>About</h3></li>
@@ -30,10 +28,7 @@
                     <div class="column">
                         <div class="form-group">
                             <label for="brand">Brand:</label>
-                            <input type="text"
-                                   id="brand"
-                                   name="brand"
-                                   [(ngModel)]="car.brand">
+                            <input type="text" id="brand" name="brand" [(ngModel)]="car.brand">
                         </div>
                         <div class="form-group">
                             <label for="model">Model:</label>
@@ -56,7 +51,7 @@
                         <div class="form-group">
                             <label for="gear_box">GearBox:</label>
                             <select id="gear_box" name="gear_box" [(ngModel)]="car.gearBox">
-                                <option value="AUTOMATION">AUTOMATION</option>
+                                <option value="AUTOMATIC">AUTOMATIC</option>
                                 <option value="MECHANIC">MECHANIC</option>
                             </select>
                         </div>
@@ -64,10 +59,14 @@
                             <label for="price">Price:</label>
                             <input type="text" id="price" name="price" [(ngModel)]="car.price">
                         </div>
+                        <div class="form-group">
+                            <label for="article">Article:</label>
+                            <input type="text" id="article" name="article" [ngModel]="car.article" readonly>
+                        </div>
                     </div>
                 </div>
                 <div class="button-group">
-                    <button class="cancel-button" type="button" (click)="cancel()">Cancel</button>
+                    <button class="cancel-button" type="button" (click)="back()">Back</button>
                     <button class="save-button" type="submit">Save Changes</button>
                 </div>
             </form>

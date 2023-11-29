@@ -3,6 +3,7 @@ import {ActivatedRoute, Router} from "@angular/router";
 import {CarService} from "../../services/car-service";
 import {IdentifiedCar} from "../../models/car/identified-car.interface";
 import {ApiResponse} from "../../models/api-response.interface";
+import {catchError, switchMap, tap} from "rxjs";
 
 @Component({
     selector: 'app-car-edit',
@@ -20,12 +21,16 @@ export class CarEditComponent implements OnInit {
         this.getCarDetails()
     }
 
-    cancel(){
+    back(){
         this.router.navigate(['catalogue'])
     }
 
     updateCar() {
-
+        this.carService.updateCar(this._car.id, this.car).subscribe(
+            response => {
+                this.router.navigate(['catalogue']);
+            }
+        )
     }
 
     get car(): IdentifiedCar {

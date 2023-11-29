@@ -166,8 +166,8 @@ button:not([aria-disabled]):active {
 }
 
 .cancel-button {
-    background: #e8480c;
-    box-shadow: #be3d11 4px 4px 0 0, #1b1b1b 4px 4px 0 1px;
+    background: #727272;
+    box-shadow: #3e3e3e 4px 4px 0 0, #1b1b1b 4px 4px 0 1px;
 }
 
 h3 {
