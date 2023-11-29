@@ -31,6 +31,7 @@ export class CarEditComponent implements OnInit {
                 this.router.navigate(['catalogue']);
             }
         )
+        console.log('Car updated:', this.car);
     }
 
     get car(): IdentifiedCar {
