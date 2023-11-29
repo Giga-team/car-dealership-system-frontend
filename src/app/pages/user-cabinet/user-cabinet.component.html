@@ -1,1 +1,41 @@
-<p>user-cabinet works!</p>
+<div class="container">
+    <div class="header">
+        <div>
+            <img id="logo-icon" src="../assets/images/logo.png" alt="logo">
+        </div>
+        <div class="user-container" routerLink = "/user-cabinet">
+            <span><h4>zdjor</h4></span>
+            <img id="user-icon" src="../assets/images/user-icon.png" alt="user-logo">
+        </div>
+    </div>
+    <div class="aside-bar">
+        <ul class="aside-bar-top-list">
+            <li routerLink = "/catalogue"><h3>Catalog</h3></li>
+            <li routerLink = "/users"><h3>Users</h3></li>
+            <li routerLink = "/orders"><h3>Orders</h3></li>
+        </ul>
+        <ul class="aside-bar-bottom-list">
+            <li routerLink = "/about"><h3>About</h3></li>
+            <li routerLink = "/help"><h3>Help</h3></li>
+        </ul>
+    </div>
+    <div class="main">
+        <div class="main-item">
+            <div class="text-container">
+
+            </div>
+            <div class="button-container">
+                <button class="view-button" (click)="viewOrder()">View</button>
+            </div>
+        </div>
+    </div>
+    <div class="filter-bar">
+        <div class="user-info">
+            <span><h4>Name:</h4></span>
+            <span><h4>Surname:</h4></span>
+            <span><h4>Phone Number:</h4></span>
+            <span><h4>Email:</h4></span>
+            <span><h4>Password:</h4></span>
+        </div>
+    </div>
+</div>

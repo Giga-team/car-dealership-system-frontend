@@ -9,6 +9,7 @@ import {CarEditComponent} from "./pages/car-edit/car-edit.component";
 import {UsersComponent} from "./pages/users/users.component";
 import {CarViewComponent} from "./pages/car-view/car-view.component";
 import {OrdersComponent} from "./pages/orders/orders.component";
+import {UserCabinetComponent} from "./pages/user-cabinet/user-cabinet.component";
 
 const routes: Routes = [
   {
@@ -40,6 +41,11 @@ const routes: Routes = [
     path: 'help',
     title: 'Help',
     component: HelpComponent
+  },
+  {
+    path: 'user-cabinet',
+    title: 'Cabinet',
+    component: UserCabinetComponent
   },
   {
     path: 'car-edit/:id',
