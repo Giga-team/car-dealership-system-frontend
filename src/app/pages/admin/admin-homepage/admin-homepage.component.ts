@@ -51,24 +51,17 @@ export class AdminHomepageComponent implements OnInit, OnDestroy{
     }
 
     public editCar(carId: number): void {
-        // this.carsSubscription = this.carService.getCar(carId)
-        //   .subscribe(
-        //     (response) => {
-        //         if (response.body !== null) {
-        //             this._cars = response.body
-        //         }
-        //     },
-        //     (error) => {
-        //         console.error('Error fetching cars:', error);
-        //     }
-        //   )
+        this.router.navigate(['/car-edit', carId])
     }
 
 
+    viewCar(carId: number): void {
+
+    }
+
     ngOnDestroy() {
         if (this.carsSubscription) {
-            console.log("A ya yibu")
-            this.carsSubscription?.unsubscribe()
+            this.carsSubscription.unsubscribe()
         }
     }
 

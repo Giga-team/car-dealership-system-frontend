@@ -61,7 +61,6 @@ export class CarService {
             { observe: 'response' })
             .pipe(
                 map((response: HttpResponse<ApiResponse<IdentifiedCar[]>>) => {
-                    console.log(typeof response)
                     return {
                         body: response.body?.body??[],
                         responseCode: response.status,

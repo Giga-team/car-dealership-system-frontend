@@ -13,6 +13,7 @@ import { UserCabinetComponent } from './pages/user-cabinet/user-cabinet.componen
 import { AboutComponent } from './pages/about/about.component';
 import { HelpComponent } from './pages/help/help.component';
 import { CarEditComponent } from './pages/car-edit/car-edit.component';
+import {UsersComponent} from "./pages/users/users.component";
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { CarEditComponent } from './pages/car-edit/car-edit.component';
     AdminHomepageComponent,
     RegistrationComponent,
     UserCabinetComponent,
+    UsersComponent,
     AboutComponent,
     HelpComponent,
     CarEditComponent
