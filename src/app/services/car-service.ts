@@ -41,6 +41,7 @@ export class CarService {
             )
     }
 
+<<<<<<< Updated upstream
     public updateCar(carId: number, car: IdentifiedCar): Observable<ApiResponse<IdentifiedCar>> {
         return this.http.put<ApiResponse<IdentifiedCar>>(`${this.carUrl}/cars/${carId}`, car, { observe: 'response'})
             .pipe(
@@ -54,6 +55,21 @@ export class CarService {
                 catchError(this.handleHttpError)
             )
     }
+=======
+   //public updateCar(): Observable<ApiResponse<IdentifiedCar>> {
+        // return this.http.put<IdentifiedCar>(`${this.carUrl}/cars/${carId}`, car, { observe: 'response'})
+        //     .pipe(
+        //         map((response: HttpResponse<IdentifiedCar>) => {
+        //             return {
+        //                 body: response.body || null,
+        //                 responseCode: response.status,
+        //                 message: response.ok ? 'Car updated successfully' : 'Failed to update car'
+        //             };
+        //         }),
+        //         catchError(this.handleHttpError)
+        //     )
+   // }
+>>>>>>> Stashed changes
 
     public getCarsPage(query: string ='',page: number = 0, limit: number = 20): Observable<ApiResponse<IdentifiedCar[]>> {
         return this.http.get<ApiResponse<IdentifiedCar[]>>(
