@@ -6,6 +6,9 @@ import {RegistrationComponent} from "./pages/registration/registration.component
 import {AboutComponent} from "./pages/about/about.component";
 import {HelpComponent} from "./pages/help/help.component";
 import {CarEditComponent} from "./pages/car-edit/car-edit.component";
+import {UsersComponent} from "./pages/users/users.component";
+import {CarViewComponent} from "./pages/car-view/car-view.component";
+import {OrdersComponent} from "./pages/orders/orders.component";
 
 const routes: Routes = [
   {
@@ -39,10 +42,25 @@ const routes: Routes = [
     component: HelpComponent
   },
   {
-    path: 'car-edit',
+    path: 'car-edit/:id',
     title: 'Car-Edit',
     component: CarEditComponent
   },
+  {
+    path: 'car-view/:id',
+    title: 'Car-View',
+    component: CarViewComponent
+  },
+  {
+    path: 'users',
+    title: 'Users',
+    component: UsersComponent
+  },
+  {
+    path: 'orders',
+    title: 'Orders',
+    component: OrdersComponent
+  }
 ]
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

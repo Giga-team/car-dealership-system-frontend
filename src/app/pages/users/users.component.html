@@ -10,32 +10,34 @@
     </div>
     <div class="aside-bar">
         <ul class="aside-bar-top-list">
-            <li routerLink = "/catalogue"><h3>Catalog</h3></li>
-            <li routerLink = "/users"><h3>Users</h3></li>
-            <li routerLink = "/orders"><h3>Orders</h3></li>
+            <li routerLink="/catalogue"><h3>Catalog</h3></li>
+            <li routerLink="/users"><h3>Users</h3></li>
+            <li ><h3>Orders</h3></li>
         </ul>
         <ul class="aside-bar-bottom-list">
-            <li routerLink = "/about"><h3>About</h3></li>
-            <li routerLink = "/help"><h3>Help</h3></li>
+            <li><h3>About</h3></li>
+            <li><h3>Help</h3></li>
         </ul>
     </div>
     <div class="main">
         <div class="main-item"
-             *ngFor="let car of cars">
+             *ngFor="let user of users">
             <div class="text-container">
-                {{car.brand}} | {{car.model}}
+                <div id="id-highlighter">{{user.id}}</div>
+                <div id="item-separator">{{user.name}} {{user.surname}}</div>
+                <div>{{user.email}}</div>
             </div>
             <div class="button-container">
-                <button class="edit-button" (click)="editCar(car.id)">Edit</button>
-                <button class="view-button" (click)="viewCar(car.id)">View</button>
-                <button class="delete-button" (click)="deleteCar(car.id)">Delete</button>
+                <button class="edit-button">Edit</button>
+                <button class="view-button">View</button>
+                <button class="delete-button">Delete</button>
             </div>
         </div>
     </div>
     <div class="filter-bar">
         <div class="filter-item">
-
+            Idi nahui
         </div>
-
+        <button>Filter</button>
     </div>
 </div>

@@ -1,40 +1,31 @@
-import {Component, OnInit} from '@angular/core';
-import {ActivatedRoute, Router} from "@angular/router";
-import {CarService} from "../../services/car-service";
+import {Component, Input, OnInit} from '@angular/core';
 import {IdentifiedCar} from "../../models/car/identified-car.interface";
 import {ApiResponse} from "../../models/api-response.interface";
-import {catchError, switchMap, tap} from "rxjs";
+import {ActivatedRoute, Router} from "@angular/router";
+import {CarService} from "../../services/car-service";
 
 @Component({
-    selector: 'app-car-edit',
-    templateUrl: './car-edit.component.html',
-    styleUrls: ['./car-edit.component.css']
+    selector: 'app-car-view',
+    templateUrl: './car-view.component.html',
+    styleUrls: ['./car-view.component.css']
 })
-export class CarEditComponent implements OnInit {
+export class CarViewComponent implements OnInit {
     private _car!: IdentifiedCar;
 
     constructor(private activatedRoute: ActivatedRoute,
                 private router: Router,
-                private carService: CarService) {}
-
-    ngOnInit() {
+                private carService: CarService) {
+    }
+    ngOnInit(): void {
         this.getCarDetails()
-    }
-
-    back(){
-        this.router.navigate(['catalogue'])
-    }
-
-    updateCar() {
-        this.carService.updateCar(this._car.id, this.car).subscribe(
-            response => {
-                this.router.navigate(['catalogue']);
-            }
-        )
     }
 
     get car(): IdentifiedCar {
         return this._car
+    }
+
+    back() {
+        this.router.navigate(['catalogue'])
     }
 
     private getCarDetails(): void {
@@ -52,4 +43,5 @@ export class CarEditComponent implements OnInit {
             )
         })
     }
+
 }

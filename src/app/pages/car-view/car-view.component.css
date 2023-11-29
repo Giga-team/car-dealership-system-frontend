@@ -1,12 +1,3 @@
-.items {
-    padding: 2em 2.5em;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    gap: 10px;
-}
-
 .container {
     display: grid;
     grid: "header header header" 8vh
@@ -138,14 +129,13 @@ li:hover {
 }
 
 button {
-    width: 8em;
+    width: 5em;
     height: 3em;
-    border-radius: 8px;
+    border-radius: 4px;
     border: 1px solid #000;
     box-shadow: #ffffff 4px 4px 0 0, #000 4px 4px 0 1px;
     touch-action: manipulation;
     cursor: pointer;
-    margin-left: 0;
 
     text-align: center;
 }
@@ -160,22 +150,17 @@ button:not([aria-disabled]):active {
     transform: translate(2px, 2px);
 }
 
-.save-button {
-    background: #2ba234;
-    box-shadow: #1b6921 4px 4px 0 0, #1b1b1b 4px 4px 0 1px;
-}
-
-.cancel-button {
+.back-button {
     background: #727272;
     box-shadow: #3e3e3e 4px 4px 0 0, #1b1b1b 4px 4px 0 1px;
 }
 
-h3 {
-    font-family: Ukraine-Thin, sans-serif;
-}
-
 h4 {
     font-family: UkraineHead-Medium, sans-serif;
+}
+
+h3 {
+    font-family: Ukraine-Thin, sans-serif;
 }
 
 h2 {
@@ -184,50 +169,40 @@ h2 {
     text-align: center;
 }
 
-form {
-    width: 90%;
-}
-
-.items {
-    width: 80%;
-    margin: 0 auto;
-    padding: 20px;
-    gap: 10px;
-}
-
-.form-group {
-    margin-bottom: 15px;
-}
-
-.form-container {
+table {
+    color: #1b1b1b;
+    border: 1px #1b1b1b solid;
     width: 100%;
-    margin: 20px auto;
+}
+
+.car-table{
+    margin: 20px 0;
+    color: #1b1b1b;
+    width: 90%;
+    border-radius: 30px;
+    height: 400px;
+    background: #1b1b1b;
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 
-.column {
-    width: 48%;
+.table-column {
+    width: 35%;
+    padding: 30px;
 }
 
-label {
-    font-family: UkraineHead-Medium, sans-serif;
-    display: block;
-    font-weight: bold;
-    margin-bottom: 5px;
-    color: #1b1b1b;
+.field-label {
+    margin-right: 30px;
 }
 
-input[type="text"],
-select {
-    width: 80%;
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-}
-
-.button-group {
+.table-row {
     display: flex;
     justify-content: center;
-    gap: 100px;
+    align-items: center;
+    width: 100%;
+    border-radius: 20px;
+    height: 40px;
+    background: azure;
+    margin-bottom: 40px;
 }

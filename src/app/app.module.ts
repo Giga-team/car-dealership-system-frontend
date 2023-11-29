@@ -13,6 +13,9 @@ import { UserCabinetComponent } from './pages/user-cabinet/user-cabinet.componen
 import { AboutComponent } from './pages/about/about.component';
 import { HelpComponent } from './pages/help/help.component';
 import { CarEditComponent } from './pages/car-edit/car-edit.component';
+import {UsersComponent} from "./pages/users/users.component";
+import {CarViewComponent} from "./pages/car-view/car-view.component";
+import { OrdersComponent } from './pages/orders/orders.component';
 
 @NgModule({
   declarations: [
@@ -20,10 +23,13 @@ import { CarEditComponent } from './pages/car-edit/car-edit.component';
     LoginComponent,
     AdminHomepageComponent,
     RegistrationComponent,
+    CarViewComponent,
     UserCabinetComponent,
+    UsersComponent,
     AboutComponent,
     HelpComponent,
-    CarEditComponent
+    CarEditComponent,
+    OrdersComponent
   ],
   imports: [
     BrowserModule,

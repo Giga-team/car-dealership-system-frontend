@@ -7,5 +7,5 @@ export interface Car {
   numberOfSeats: number;
   gearBox: string;
   price: number;
-  carStatus: string;
+  status: string;
 }
