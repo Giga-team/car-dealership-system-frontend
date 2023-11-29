@@ -3,6 +3,7 @@ import {IdentifiedUser} from "../../models/user/identified-user.interface";
 import {Router} from "@angular/router";
 import {UserService} from "../../services/user-service";
 import {Subscription} from "rxjs";
+import {StorageService} from "../../services/storage-service";
 
 @Component({
     selector: 'app-user-cabinet',
@@ -14,29 +15,20 @@ export class UserCabinetComponent implements OnInit, OnDestroy{
     private userSubscription: Subscription | undefined
 
     constructor(private router: Router,
-                private userService: UserService) {
+                private userService: UserService,
+                private storageService: StorageService) {
     }
 
     ngOnInit() {
-        this.getUser(this._user.id);
+        this.getUser();
     }
 
     public get user(){
         return this._user
     }
 
-    private getUser(userId: number) {
-        this.userSubscription = this.userService.getUser(userId)
-            .subscribe(
-                (response) => {
-                    if (response.body !== null) {
-                        this._user = response.body
-                    }
-                },
-                (error) => {
-                    console.error('Error fetching users:',error);
-                }
-            )
+    private getUser() {
+        this._user = this.storageService.getUser()
     }
 
     viewOrder() {

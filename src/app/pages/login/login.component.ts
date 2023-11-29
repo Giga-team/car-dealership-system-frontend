@@ -25,7 +25,7 @@ export class LoginComponent implements OnInit {
 
         if (this.storageService.isLoggedIn()) {
             this.isLoggedIn = true;
-            this.role = this.storageService.getUser();
+            this.role = this.storageService.getUserRole();
 
             console.log(this.role);
 
@@ -42,7 +42,7 @@ export class LoginComponent implements OnInit {
 
                 this.isLoginFailed = false;
                 this.isLoggedIn = true;
-                this.role = this.storageService.getUser();
+                this.role = this.storageService.getUserRole();
                 this.reloadPage();
             }
             // error: err => {

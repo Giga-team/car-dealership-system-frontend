@@ -31,11 +31,22 @@
     </div>
     <div class="filter-bar">
         <div class="user-info">
-            <span><h4>Name:</h4></span>
-            <span><h4>Surname:</h4></span>
-            <span><h4>Phone Number:</h4></span>
-            <span><h4>Email:</h4></span>
-            <span><h4>Password:</h4></span>
+            <div class="filter-row">
+                <span class="field-label"><h4>Name:</h4></span>
+                {{user.name}}
+            </div>
+            <div class="filter-row">
+                <span class="field-label"><h4>Surname:</h4></span>
+                {{user.surname}}
+            </div>
+            <div class="filter-row">
+                <span class="field-label"><h4>Email:</h4></span>
+                {{user.email}}
+            </div>
+            <div class="filter-row">
+                <span class="field-label"><h4>Phone number:</h4></span>
+                {{user.phoneNumber}}
+            </div>
         </div>
     </div>
 </div>

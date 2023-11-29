@@ -10,7 +10,7 @@ body {
 .login-container {
     border-radius: 2.5em;
     width: 20%;
-    height: 50%;
+    height: 60%;
     background: transparent;
     align-content: center;
 
@@ -35,7 +35,7 @@ body {
 button {
     width: 80%;
     height: 40px;
-    margin-top: 40px;
+    margin-top: 15px;
     border-radius: 25px;
     border: 2px solid #1b1b1b;
     box-shadow: #fff 1px 1px 1px 1px,#000 0 6px 0 0px;
