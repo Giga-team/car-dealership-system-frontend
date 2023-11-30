@@ -51,6 +51,10 @@ export class UsersComponent implements OnInit, OnDestroy{
         this.getUsers();
     }
 
+    viewUser(userId: number): void {
+        this.router.navigate(['/user-view', userId])
+    }
+
     ngOnDestroy() {
         if (this.userSubscription) {
             this.userSubscription.unsubscribe()

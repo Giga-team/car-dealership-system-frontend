@@ -10,6 +10,7 @@ import {UsersComponent} from "./pages/users/users.component";
 import {CarViewComponent} from "./pages/car-view/car-view.component";
 import {OrdersComponent} from "./pages/orders/orders.component";
 import {UserCabinetComponent} from "./pages/user-cabinet/user-cabinet.component";
+import {UserViewComponent} from "./pages/user-view/user-view.component";
 
 const routes: Routes = [
   {
@@ -66,6 +67,11 @@ const routes: Routes = [
     path: 'orders',
     title: 'Orders',
     component: OrdersComponent
+  },
+  {
+    path: 'user-view/:id',
+    title: 'User-View',
+    component: UserViewComponent
   }
 ]
 @NgModule({

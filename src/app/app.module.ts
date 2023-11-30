@@ -16,6 +16,7 @@ import { CarEditComponent } from './pages/car-edit/car-edit.component';
 import {UsersComponent} from "./pages/users/users.component";
 import {CarViewComponent} from "./pages/car-view/car-view.component";
 import { OrdersComponent } from './pages/orders/orders.component';
+import { UserViewComponent } from './pages/user-view/user-view.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { OrdersComponent } from './pages/orders/orders.component';
     AboutComponent,
     HelpComponent,
     CarEditComponent,
-    OrdersComponent
+    OrdersComponent,
+    UserViewComponent
   ],
   imports: [
     BrowserModule,
