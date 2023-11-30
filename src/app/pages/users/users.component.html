@@ -3,8 +3,7 @@
         <div>
             <img id="logo-icon" src="../assets/images/logo.png" alt="logo">
         </div>
-        <div class="user-container">
-            <span><h4>zdjor</h4></span>
+        <div class="user-container" routerLink = "/user-cabinet">
             <img id="user-icon" src="../assets/images/user-icon.png" alt="user-logo">
         </div>
     </div>
@@ -12,11 +11,11 @@
         <ul class="aside-bar-top-list">
             <li routerLink="/catalogue"><h3>Catalog</h3></li>
             <li routerLink="/users"><h3>Users</h3></li>
-            <li ><h3>Orders</h3></li>
+            <li routerLink="/orders"><h3>Orders</h3></li>
         </ul>
         <ul class="aside-bar-bottom-list">
-            <li><h3>About</h3></li>
-            <li><h3>Help</h3></li>
+            <li routerLink="/about"><h3>About</h3></li>
+            <li routerLink="/help"><h3>Help</h3></li>
         </ul>
     </div>
     <div class="main">
@@ -28,16 +27,14 @@
                 <div>{{user.email}}</div>
             </div>
             <div class="button-container">
-                <button class="edit-button">Edit</button>
-                <button class="view-button">View</button>
-                <button class="delete-button">Delete</button>
+                <button class="edit-button" (click)="editUser(user.id)">Edit</button>
+                <button class="view-button" (click)="viewUser(user.id)">View</button>
+                <button class="delete-button" (click)="deleteUser(user.id)">Delete</button>
             </div>
         </div>
     </div>
     <div class="filter-bar">
         <div class="filter-item">
-            Idi nahui
         </div>
-        <button>Filter</button>
     </div>
 </div>

@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import {IdentifiedUser} from "../models/user/identified-user.interface";
 
 const USER_KEY = 'auth-user';
 
@@ -17,7 +18,7 @@ export class StorageService {
         window.sessionStorage.setItem(USER_KEY, JSON.stringify(user));
     }
 
-    public getUser(): any {
+    public getUserRole(): any {
         const user = window.sessionStorage.getItem(USER_KEY);
         console.log(user);
         if (user) {
@@ -33,6 +34,29 @@ export class StorageService {
         }
 
         return null;
+    }
+
+
+    // @ts-ignore
+    public getUser(): IdentifiedUser {
+        const user = window.sessionStorage.getItem(USER_KEY);
+        console.log(user);
+        if (user) {
+            const userData = JSON.parse(user);
+
+            console.log(userData);
+
+            if (userData && userData.body) {
+                return {
+                    id: userData.body.id,
+                    name: userData.body.name,
+                    surname: userData.body.surname,
+                    phoneNumber: userData.body.phoneNumber,
+                    email: userData.body.email,
+                    role: userData.body.userRole
+                };
+            }
+        }
     }
 
     public isLoggedIn(): boolean {

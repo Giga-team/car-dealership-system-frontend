@@ -9,6 +9,9 @@ import {CarEditComponent} from "./pages/car-edit/car-edit.component";
 import {UsersComponent} from "./pages/users/users.component";
 import {CarViewComponent} from "./pages/car-view/car-view.component";
 import {OrdersComponent} from "./pages/orders/orders.component";
+import {UserCabinetComponent} from "./pages/user-cabinet/user-cabinet.component";
+import {UserViewComponent} from "./pages/user-view/user-view.component";
+import {UserEditComponent} from "./pages/user-edit/user-edit.component";
 
 const routes: Routes = [
   {
@@ -42,6 +45,11 @@ const routes: Routes = [
     component: HelpComponent
   },
   {
+    path: 'user-cabinet',
+    title: 'Cabinet',
+    component: UserCabinetComponent
+  },
+  {
     path: 'car-edit/:id',
     title: 'Car-Edit',
     component: CarEditComponent
@@ -60,6 +68,16 @@ const routes: Routes = [
     path: 'orders',
     title: 'Orders',
     component: OrdersComponent
+  },
+  {
+    path: 'user-view/:id',
+    title: 'User-View',
+    component: UserViewComponent
+  },
+  {
+    path: 'user-edit/:id',
+    title: 'User-Edit',
+    component: UserEditComponent
   }
 ]
 @NgModule({

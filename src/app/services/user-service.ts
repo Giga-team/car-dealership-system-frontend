@@ -13,16 +13,14 @@ export class UserService {
     private userUrl = "http://localhost:8080/v1/car-dealership-system-api";
     constructor(private http: HttpClient) {}
 
-    public getUsers():Observable<{users: IdentifiedUser[]}>{
-        return this.http.get<{users: IdentifiedUser[]}>(`{'http://localhost:8080'`);
-    }
-
     public getUser(userId: number):Observable<ApiResponse<IdentifiedUser>>{
-        return this.http.get<IdentifiedUser>(`${this.userUrl}/users/${userId}`, { observe: 'response'})
+        console.log(userId);
+
+        return this.http.get<ApiResponse<IdentifiedUser>>(`${this.userUrl}/users/${userId}`, { observe: 'response'})
             .pipe(
-                map((response: HttpResponse<IdentifiedUser>) => {
+                map((response: HttpResponse<ApiResponse<IdentifiedUser>>) => {
                     return {
-                        body: response.body || null,
+                        body: response.body?.body??null,
                         responseCode: response.status,
                         message: response.ok ? 'User retrieved successfully' : 'Failed to retrieve'
                     };
@@ -32,11 +30,11 @@ export class UserService {
     }
 
     public createUser(user: User): Observable<ApiResponse<IdentifiedUser>>{
-        return this.http.post<IdentifiedUser>(`${this.userUrl}/users`,user, { observe: 'response' })
+        return this.http.post<ApiResponse<IdentifiedUser>>(`${this.userUrl}/users`,user, { observe: 'response' })
             .pipe(
-                map((response: HttpResponse<IdentifiedUser>) => {
+                map((response: HttpResponse<ApiResponse<IdentifiedUser>>) => {
                     return {
-                        body: response.body,
+                        body: response.body?.body??null,
                         responseCode: response.status,
                         message: response.ok ? 'User created successfully' : 'Failed to create user'
                     };
@@ -46,11 +44,11 @@ export class UserService {
     }
 
     public updateUser(userId: number, user: IdentifiedUser): Observable<ApiResponse<IdentifiedUser>>{
-        return this.http.put<IdentifiedUser>(`${this.userUrl}/users/${userId}`,user, { observe: 'response'})
+        return this.http.put<ApiResponse<IdentifiedUser>>(`${this.userUrl}/users/${userId}`,user, { observe: 'response'})
             .pipe(
-                map((response: HttpResponse<IdentifiedUser>) => {
+                map((response: HttpResponse<ApiResponse<IdentifiedUser>>) => {
                     return {
-                        body: response.body,
+                        body: response.body?.body??null,
                         responseCode: response.status,
                         message: response.ok ? 'User updated successfully' : 'Failed to update user'
                     };
@@ -60,11 +58,11 @@ export class UserService {
     }
 
     public deleteUser(userId: number): Observable<ApiResponse<void>>{
-        return this.http.delete<void>(`${this.userUrl}`, { observe: 'response' })
+        return this.http.delete<ApiResponse<void>>(`${this.userUrl}/users/${userId}`, { observe: 'response' })
             .pipe(
-                map((response: HttpResponse<void>) => {
+                map((response: HttpResponse<ApiResponse<void>>) => {
                     return {
-                        body: response.body,
+                        body: response.body?.body??null,
                         responseCode: response.status,
                         message: response.ok ? 'User deleted successfully' : 'Failed to delete user'
                     };

@@ -17,7 +17,7 @@ export class CarViewComponent implements OnInit {
                 private carService: CarService) {
     }
     ngOnInit(): void {
-        this.getCarDetails()
+        this.getUserDetails()
     }
 
     get car(): IdentifiedCar {
@@ -28,7 +28,7 @@ export class CarViewComponent implements OnInit {
         this.router.navigate(['catalogue'])
     }
 
-    private getCarDetails(): void {
+    private getUserDetails(): void {
         this.activatedRoute.params.subscribe(params => {
             this.carService.getCar(Number(params['id'])).subscribe(
                 (response: ApiResponse<IdentifiedCar>) => {

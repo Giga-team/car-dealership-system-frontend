@@ -1,3 +1,12 @@
+.items {
+    padding: 2em 2.5em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+
 .container {
     display: grid;
     grid: "header header header" 8vh
@@ -19,7 +28,6 @@
 
 .user-container {
     display: flex;
-    width: 100px;
     align-items: center;
     gap: 20px;
 }
@@ -124,28 +132,20 @@ li:hover {
     justify-content: space-between;
 }
 
-.user-info {
-    display: flex;
-    flex-direction: column;
-}
-
-span {
-    margin: 5px;
-}
-
 .button-container {
     display: flex;
     gap: 20px;
 }
 
 button {
-    width: 5em;
+    width: 8em;
     height: 3em;
-    border-radius: 4px;
+    border-radius: 8px;
     border: 1px solid #000;
     box-shadow: #ffffff 4px 4px 0 0, #000 4px 4px 0 1px;
     touch-action: manipulation;
     cursor: pointer;
+    margin-left: 0;
 
     text-align: center;
 }
@@ -160,15 +160,75 @@ button:not([aria-disabled]):active {
     transform: translate(2px, 2px);
 }
 
-.view-button {
-    background: azure;
-    box-shadow: #d4dfdf 4px 4px 0 0, azure 4px 4px 0 1px;
+.save-button {
+    background: #2ba234;
+    box-shadow: #1b6921 4px 4px 0 0, #1b1b1b 4px 4px 0 1px;
+}
+
+.cancel-button {
+    background: #727272;
+    box-shadow: #3e3e3e 4px 4px 0 0, #1b1b1b 4px 4px 0 1px;
+}
+
+h3 {
+    font-family: Ukraine-Thin, sans-serif;
 }
 
 h4 {
     font-family: UkraineHead-Medium, sans-serif;
 }
 
-h3 {
+h2 {
     font-family: Ukraine-Thin, sans-serif;
+    color: #1b1b1b;
+    text-align: center;
+}
+
+form {
+    width: 90%;
+}
+
+.items {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+    gap: 10px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-container {
+    width: 50%;
+    margin: 20px auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.column {
+    width: 90%;
+    margin: 20px auto;
+}
+
+label {
+    font-family: UkraineHead-Medium, sans-serif;
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #1b1b1b;
+}
+
+input[type="text"],
+select {
+    width: 80%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.button-group {
+    display: flex;
+    justify-content: center;
+    gap: 100px;
 }

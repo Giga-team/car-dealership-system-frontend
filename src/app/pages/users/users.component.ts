@@ -22,6 +22,8 @@ export class UsersComponent implements OnInit, OnDestroy{
     }
 
     public deleteUser(userId: number){
+        console.log(userId);
+
         this.userSubscription = this.userService.deleteUser(userId)
             .subscribe(
                 () => {
@@ -49,6 +51,14 @@ export class UsersComponent implements OnInit, OnDestroy{
 
     ngOnInit() {
         this.getUsers();
+    }
+
+    public editUser(userId: number): void {
+        this.router.navigate(['/user-edit', userId])
+    }
+
+    viewUser(userId: number): void {
+        this.router.navigate(['/user-view', userId])
     }
 
     ngOnDestroy() {

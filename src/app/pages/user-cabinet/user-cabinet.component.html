@@ -1,1 +1,50 @@
-<p>user-cabinet works!</p>
+<div class="container">
+    <div class="header">
+        <div>
+            <img id="logo-icon" src="../assets/images/logo.png" alt="logo">
+        </div>
+        <div class="user-container" routerLink = "/user-cabinet">
+            <img id="user-icon" src="../assets/images/user-icon.png" alt="user-logo">
+        </div>
+    </div>
+    <div class="aside-bar">
+        <ul class="aside-bar-top-list">
+            <li routerLink = "/catalogue"><h3>Catalog</h3></li>
+            <li routerLink = "/users"><h3>Users</h3></li>
+            <li routerLink = "/orders"><h3>Orders</h3></li>
+        </ul>
+        <ul class="aside-bar-bottom-list">
+            <li routerLink = "/about"><h3>About</h3></li>
+            <li routerLink = "/help"><h3>Help</h3></li>
+        </ul>
+    </div>
+    <div class="main">
+<!--        <div class="main-item">-->
+<!--            <div class="text-container">-->
+
+<!--            </div>-->
+<!--        </div>-->
+    </div>
+    <div class="filter-bar">
+        <div class="user-info">
+            <div class="filter-row">
+                <span class="field-label"><h4>Name:</h4></span>
+                {{user.name}}
+            </div>
+            <div class="filter-row">
+                <span class="field-label"><h4>Surname:</h4></span>
+                {{user.surname}}
+            </div>
+            <div class="filter-row">
+                <span class="field-label"><h4>Email:</h4></span>
+                {{user.email}}
+            </div>
+            <div class="filter-row">
+                <span class="field-label"><h4>Phone number:</h4></span>
+                {{user.phoneNumber}}
+            </div>
+            <br>
+            <button type="submit" (click)="logout()">Logout</button>
+        </div>
+    </div>
+</div>
