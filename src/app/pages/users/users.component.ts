@@ -51,6 +51,10 @@ export class UsersComponent implements OnInit, OnDestroy{
         this.getUsers();
     }
 
+    public editUser(userId: number): void {
+        this.router.navigate(['/user-edit', userId])
+    }
+
     viewUser(userId: number): void {
         this.router.navigate(['/user-view', userId])
     }
