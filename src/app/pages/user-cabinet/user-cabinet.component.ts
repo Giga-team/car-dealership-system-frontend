@@ -40,4 +40,14 @@ export class UserCabinetComponent implements OnInit, OnDestroy{
             this.userSubscription.unsubscribe()
         }
     }
+
+    public logout() {
+        this.storageService.clean();
+        this.reloadPage();
+    }
+
+
+    reloadPage(): void {
+        this.router.navigate([`/login`]);
+    }
 }

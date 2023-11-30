@@ -4,7 +4,10 @@
             <img id="logo-icon" src="../assets/images/logo.png" alt="logo">
         </div>
         <div class="user-container" routerLink = "/user-cabinet">
+<<<<<<< HEAD
             <span><h4>zdjor</h4></span>
+=======
+>>>>>>> main
             <img id="user-icon" src="../assets/images/user-icon.png" alt="user-logo">
         </div>
     </div>
@@ -28,6 +31,11 @@
                 <button class="view-button" (click)="viewOrder()">View</button>
             </div>
         </div>
+<!--        <div class="main-item">-->
+<!--            <div class="text-container">-->
+
+<!--            </div>-->
+<!--        </div>-->
     </div>
     <div class="filter-bar">
         <div class="user-info">
@@ -47,6 +55,8 @@
                 <span class="field-label"><h4>Phone number:</h4></span>
                 {{user.phoneNumber}}
             </div>
+            <br>
+            <button type="submit" (click)="logout()">Logout</button>
         </div>
     </div>
 </div>

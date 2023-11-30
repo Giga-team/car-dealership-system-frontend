@@ -56,7 +56,7 @@ export class UserService {
     }
 
     public deleteUser(userId: number): Observable<ApiResponse<void>>{
-        return this.http.delete<ApiResponse<void>>(`${this.userUrl}`, { observe: 'response' })
+        return this.http.delete<ApiResponse<void>>(`${this.userUrl}/users/${userId}`, { observe: 'response' })
             .pipe(
                 map((response: HttpResponse<ApiResponse<void>>) => {
                     return {
