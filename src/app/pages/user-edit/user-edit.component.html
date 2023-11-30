@@ -26,20 +26,28 @@
                 <div class="form-container">
                     <div class="column">
                         <div class="form-group">
-                            <label for="brand">Name:</label>
-                            <input type="text" id="brand" name="brand" [(ngModel)]="user.name">
+                            <label for="name">Name:</label>
+                            <input type="text" id="name" name="name" [(ngModel)]="user.name">
                         </div>
                         <div class="form-group">
-                            <label for="model">Surname:</label>
-                            <input type="text" id="model" name="model" [(ngModel)]="user.surname">
+                            <label for="surname">Surname:</label>
+                            <input type="text" id="surname" name="surname" [(ngModel)]="user.surname">
                         </div>
                         <div class="form-group">
-                            <label for="engine_capacity">Phone:</label>
-                            <input type="text" id="engine_capacity" name="engine_capacity" [(ngModel)]="user.phoneNumber">
+                            <label for="phoneNumber">Phone:</label>
+                            <input type="text" id="phoneNumber" name="phoneNumber" [(ngModel)]="user.phoneNumber">
                         </div>
                         <div class="form-group">
-                            <label for="power">Email:</label>
-                            <input type="text" id="power" name="power" [(ngModel)]="user.email">
+                            <label for="email">Email:</label>
+                            <input type="text" id="email" name="email" [(ngModel)]="user.email">
+                        </div>
+                        <div class="form-group">
+                            <label for="role">Role:</label>
+                            <select id="role" name="gear_box" [(ngModel)]="user.role">
+                                <option value="ADMIN">ADMIN</option>
+                                <option value="GUEST">GUEST</option>
+                                <option value="MANAGER">MANAGER</option>
+                            </select>
                         </div>
                     </div>
                 </div>

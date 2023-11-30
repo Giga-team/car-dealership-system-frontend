@@ -21,6 +21,8 @@ export class UserEditComponent {
     }
 
     updateUser() {
+        console.log(this.user);
+
         this.userService.updateUser(this._user.id, this.user).subscribe(
           response => {
               this.router.navigate(['users']);

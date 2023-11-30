@@ -22,6 +22,8 @@ export class UsersComponent implements OnInit, OnDestroy{
     }
 
     public deleteUser(userId: number){
+        console.log(userId);
+
         this.userSubscription = this.userService.deleteUser(userId)
             .subscribe(
                 () => {

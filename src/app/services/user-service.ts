@@ -14,6 +14,8 @@ export class UserService {
     constructor(private http: HttpClient) {}
 
     public getUser(userId: number):Observable<ApiResponse<IdentifiedUser>>{
+        console.log(userId);
+
         return this.http.get<ApiResponse<IdentifiedUser>>(`${this.userUrl}/users/${userId}`, { observe: 'response'})
             .pipe(
                 map((response: HttpResponse<ApiResponse<IdentifiedUser>>) => {
@@ -56,7 +58,7 @@ export class UserService {
     }
 
     public deleteUser(userId: number): Observable<ApiResponse<void>>{
-        return this.http.delete<ApiResponse<void>>(`${this.userUrl}`, { observe: 'response' })
+        return this.http.delete<ApiResponse<void>>(`${this.userUrl}/users/${userId}`, { observe: 'response' })
             .pipe(
                 map((response: HttpResponse<ApiResponse<void>>) => {
                     return {

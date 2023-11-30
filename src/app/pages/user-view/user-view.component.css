@@ -176,7 +176,7 @@ table {
 }
 
 .car-table{
-    margin: 20px 0;
+    margin: 20px auto;
     color: #1b1b1b;
     width: 40%;
     border-radius: 30px;
@@ -205,4 +205,5 @@ table {
     height: 40px;
     background: azure;
     margin-bottom: 40px;
+    margin-top: 20px;
 }
