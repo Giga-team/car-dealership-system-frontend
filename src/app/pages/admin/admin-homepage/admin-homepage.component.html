@@ -4,10 +4,6 @@
             <img id="logo-icon" src="../assets/images/logo.png" alt="logo">
         </div>
         <div class="user-container" routerLink = "/user-cabinet">
-<<<<<<< HEAD
-            <span><h4>zdjor</h4></span>
-=======
->>>>>>> main
             <img id="user-icon" src="../assets/images/user-icon.png" alt="user-logo">
         </div>
     </div>
@@ -34,11 +30,20 @@
                 <button class="delete-button" (click)="deleteCar(car.id)">Delete</button>
             </div>
         </div>
+        <div class="pagination-container">
+            <div class="pagination-buttons">
+                <button class="edit-button"><<</button>
+                <button class="view-button">View</button>
+                <button class="view-button">Delete</button>
+                <button class="view-button">Delete</button>
+                <button class="edit-button">>></button>
+            </div>
+            <button class="create-button" (click)="createCar()">Add</button>
+        </div>
     </div>
     <div class="filter-bar">
         <div class="filter-item">
 
         </div>
-
     </div>
 </div>

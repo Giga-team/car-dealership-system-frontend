@@ -12,6 +12,7 @@ import {OrdersComponent} from "./pages/orders/orders.component";
 import {UserCabinetComponent} from "./pages/user-cabinet/user-cabinet.component";
 import {UserViewComponent} from "./pages/user-view/user-view.component";
 import {UserEditComponent} from "./pages/user-edit/user-edit.component";
+import {CarCreateComponent} from "./pages/car-create/car-create.component";
 
 const routes: Routes = [
   {
@@ -48,6 +49,11 @@ const routes: Routes = [
     path: 'user-cabinet',
     title: 'Cabinet',
     component: UserCabinetComponent
+  },
+  {
+    path: 'car-create',
+    title: 'New car',
+    component: CarCreateComponent
   },
   {
     path: 'car-edit/:id',

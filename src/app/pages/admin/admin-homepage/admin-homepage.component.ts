@@ -1,7 +1,7 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import {CarService} from "../../../services/car-service";
 import {IdentifiedCar} from "../../../models/car/identified-car.interface";
-import {Router} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 import {Subscription} from "rxjs";
 
 @Component({
@@ -14,7 +14,8 @@ export class AdminHomepageComponent implements OnInit, OnDestroy{
     private carsSubscription: Subscription | undefined;
 
     constructor(private readonly carService: CarService,
-                private router: Router) {}
+                private readonly router: Router,
+                private readonly route: ActivatedRoute) {}
 
     ngOnInit(): void {
         this.getCars();
@@ -38,7 +39,11 @@ export class AdminHomepageComponent implements OnInit, OnDestroy{
         return this._cars;
     }
 
-    public deleteCar(carId: number): void {
+    createCar() {
+        this.router.navigate(['car-create'])
+    }
+
+    deleteCar(carId: number): void {
         this.carsSubscription = this.carService.deleteCar(carId)
             .subscribe(
             () => {
@@ -50,10 +55,9 @@ export class AdminHomepageComponent implements OnInit, OnDestroy{
         )
     }
 
-    public editCar(carId: number): void {
+    editCar(carId: number): void {
         this.router.navigate(['/car-edit', carId])
     }
-
 
     viewCar(carId: number): void {
         this.router.navigate(['/car-view', carId])
