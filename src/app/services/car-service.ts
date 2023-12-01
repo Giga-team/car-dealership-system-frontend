@@ -86,6 +86,20 @@ export class CarService {
             )
     }
 
+    public getCarsCount(query: string = ''): Observable<ApiResponse<number>> {
+        return this.http.get<ApiResponse<number>>(`${this.carUrl}/cars/count?query=${query}`, { observe: 'response' })
+            .pipe(
+                map((response: HttpResponse<ApiResponse<number>>) => {
+                    return {
+                        body: response.body?.body??0,
+                        responseCode: response.status,
+                        message: response.ok ? 'Cars count retrieved successfully' : "Failed to retrieve cars count"
+                    }
+                }),
+                catchError(this.handleHttpError)
+            )
+    }
+
     private handleHttpError(error: HttpErrorResponse): Observable<never> {
         console.error('HTTP error:', error);
         return throwError(() => 'Something went wrong. Please try again.');
