@@ -87,11 +87,10 @@ li:hover {
 .filter-bar {
     background: azure;
     grid-area: filter-bar;
-    padding: 10% 10%;
+    padding: 5% 5%;
     gap: 10px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     color: #1b1b1b;
     border-left: solid #1b1b1b 2px;
 }
@@ -172,6 +171,27 @@ button:not([aria-disabled]):active {
     transform: translate(2px, 2px);
 }
 
+.filter-item {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.input-range {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.gear-box-selector {
+    display: flex;
+    justify-content: space-between;
+}
+
+#gear-box {
+    width: 60%;
+}
+
 .create-button {
     position: absolute;
     bottom: 45px;
@@ -179,6 +199,16 @@ button:not([aria-disabled]):active {
     left: 75%;
     background: #2ba234;
     box-shadow: #d4dfdf 4px 4px 0 0, azure 4px 4px 0 1px;
+}
+
+.search-button {
+
+}
+
+.filter-buttons {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 40px;
 }
 
 .view-button {
@@ -199,6 +229,20 @@ button:not([aria-disabled]):active {
 .page-button {
     background: #e8480c;
     box-shadow: #be3d11 4px 4px 0 0, #de4512 4px 4px 0 1px;
+}
+
+select{
+    height: 1.5em;
+}
+
+input {
+    height: 1.5em;
+    margin-top: 5px;
+    width: 100%;
+}
+
+label {
+    font-family: Ukraine-Thin, sans-serif;
 }
 
 h4 {
