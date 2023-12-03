@@ -74,7 +74,10 @@ export class UserService {
     public getUserPage(query: string = '', page: number = 0, limit: number = 20): Observable<ApiResponse<IdentifiedUser[]>> {
       if (!query) {
         query = "role=out=('ADMIN')";
+      } else {
+        query = query + ";role=out=('ADMIN')";
       }
+
 
       return this.http.get<ApiResponse<IdentifiedUser[]>>(
             `${this.userUrl}/users/page?query=${query}&page=${page}&limit=${limit}`,
