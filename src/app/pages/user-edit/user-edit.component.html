@@ -21,7 +21,7 @@
     <div class="main">
         <div class="items" *ngIf="user">
             <br>
-            <h2>Edit Car</h2>
+            <h2>Edit User</h2>
             <form (ngSubmit)="updateUser()">
                 <div class="form-container">
                     <div class="column">
@@ -40,14 +40,6 @@
                         <div class="form-group">
                             <label for="email">Email:</label>
                             <input type="text" id="email" name="email" [(ngModel)]="user.email">
-                        </div>
-                        <div class="form-group">
-                            <label for="role">Role:</label>
-                            <select id="role" name="gear_box" [(ngModel)]="user.role">
-                                <option value="ADMIN">ADMIN</option>
-                                <option value="GUEST">GUEST</option>
-                                <option value="MANAGER">MANAGER</option>
-                            </select>
                         </div>
                     </div>
                 </div>

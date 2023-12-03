@@ -18,6 +18,7 @@ import {CarViewComponent} from "./pages/car-view/car-view.component";
 import { OrdersComponent } from './pages/orders/orders.component';
 import { UserViewComponent } from './pages/user-view/user-view.component';
 import { UserEditComponent } from './pages/user-edit/user-edit.component';
+import { OrderViewComponent } from './pages/order-view/order-view.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { UserEditComponent } from './pages/user-edit/user-edit.component';
     CarEditComponent,
     OrdersComponent,
     UserViewComponent,
-    UserEditComponent
+    UserEditComponent,
+    OrderViewComponent
   ],
   imports: [
     BrowserModule,
