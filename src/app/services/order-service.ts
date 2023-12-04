@@ -3,6 +3,7 @@ import {catchError, map, Observable, throwError} from "rxjs";
 import {HttpClient, HttpErrorResponse, HttpResponse} from "@angular/common/http";
 import {ApiResponse} from "../models/api-response.interface";
 import {FullOrder} from "../models/order/fullorder.interface";
+import {CreateOrder} from "../models/order/create-order.interface";
 
 @Injectable({
     providedIn: 'root'
@@ -24,35 +25,36 @@ export class OrderService {
                 catchError(this.handleHttpError)
             );
     }
-    //
-    // public createUser(user: User): Observable<ApiResponse<IdentifiedUser>>{
-    //     return this.http.post<ApiResponse<IdentifiedUser>>(`${this.userUrl}/users`,user, { observe: 'response' })
-    //         .pipe(
-    //             map((response: HttpResponse<ApiResponse<IdentifiedUser>>) => {
-    //                 return {
-    //                     body: response.body?.body??null,
-    //                     responseCode: response.status,
-    //                     message: response.ok ? 'User created successfully' : 'Failed to create user'
-    //                 };
-    //             }),
-    //             catchError(this.handleHttpError)
-    //         );
-    // }
-    //
-    // public updateUser(userId: number, user: IdentifiedUser): Observable<ApiResponse<IdentifiedUser>>{
-    //     return this.http.put<ApiResponse<IdentifiedUser>>(`${this.userUrl}/users/${userId}`,user, { observe: 'response'})
-    //         .pipe(
-    //             map((response: HttpResponse<ApiResponse<IdentifiedUser>>) => {
-    //                 return {
-    //                     body: response.body?.body??null,
-    //                     responseCode: response.status,
-    //                     message: response.ok ? 'User updated successfully' : 'Failed to update user'
-    //                 };
-    //             }),
-    //             catchError(this.handleHttpError)
-    //         );
-    // }
-    //
+
+    public createOrder(order: CreateOrder): Observable<ApiResponse<number>>{
+
+        return this.http.post<ApiResponse<number>>(`${this.userUrl}/orders`, order, { observe: 'response' })
+            .pipe(
+                map((response: HttpResponse<ApiResponse<number>>) => {
+                    return {
+                        body: response.body?.body??null,
+                        responseCode: response.status,
+                        message: response.ok ? 'Order created successfully' : 'Failed to create order'
+                    };
+                }),
+                catchError(this.handleHttpError)
+            );
+    }
+
+    public updateOrder(orderId: number, status: string): Observable<ApiResponse<void>>{
+        return this.http.put<ApiResponse<void>>(`${this.userUrl}/orders/${orderId}/status`,{status: status}, { observe: 'response'})
+            .pipe(
+                map((response: HttpResponse<ApiResponse<void>>) => {
+                    return {
+                        body: null,
+                        responseCode: response.status,
+                        message: response.ok ? 'Order updated successfully' : 'Failed to update order'
+                    };
+                }),
+                catchError(this.handleHttpError)
+            );
+    }
+
     public getOrderPage(query: string = '', page: number = 0, limit: number = 20): Observable<ApiResponse<FullOrder[]>> {
         return this.http.get<ApiResponse<FullOrder[]>>(
             `${this.userUrl}/orders/page?query=${query}&page=${page}&limit=${limit}`,

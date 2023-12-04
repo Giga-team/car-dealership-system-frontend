@@ -23,6 +23,11 @@ export class OrderViewComponent implements OnInit {
     }
 
     get order(): FullOrder {
+      const timestamp = this._order.creationDate;
+      const date = new Date(timestamp);
+      const formattedDate = date.toLocaleString(); // Adjust this based on your desired format
+      this._order.creationDate = formattedDate;
+
         return this._order
     }
 
@@ -45,5 +50,15 @@ export class OrderViewComponent implements OnInit {
             )
         })
     }
+
+  public updateOrder() {
+      console.log(this._order.id, this._order.status);
+
+    this.orderService.updateOrder(this._order.id, this._order.status).subscribe(
+      response => {
+        this.router.navigate(['orders']);
+      }
+    )
+  }
 
 }

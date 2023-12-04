@@ -33,12 +33,18 @@
                     <span class="field-label">UserID:</span>{{order.userId}}
                 </div>
                 <div class="table-row">
-                    <span class="field-label">Status:</span>{{order.status}}
+                    <label for="gear_box">Status:</label>
+                    <select id="gear_box" name="gear_box" [(ngModel)]="order.status">
+                        <option value="CREATED">CREATED</option>
+                        <option value="IN_PROGRESS">IN_PROGRESS</option>
+                        <option value="IN_PLACE">IN_PLACE</option>
+                        <option value="COMPLETE">COMPLETE</option>
+                    </select>
                 </div>
             </div>
             <div class="table-column">
                 <div class="table-row">
-                    <span class="field-label">Status:</span>{{order.creationDate}}
+                    <span class="field-label">CreationDate:</span>{{order.creationDate}}
                 </div>
                 <div class="table-row">
                     <span class="field-label">User name:</span>{{order.name}}
@@ -54,7 +60,10 @@
                 </div>
             </div>
         </div>
-        <button class="back-button" (click)="back()">Back</button>
+        <div class="button-group">
+            <button class="cancel-button" type="button" (click)="back()">Back</button>
+            <button class="save-button" type="submit" (click)="updateOrder()">Save Changes</button>
+        </div>
     </div>
     <div class="filter-bar">
 

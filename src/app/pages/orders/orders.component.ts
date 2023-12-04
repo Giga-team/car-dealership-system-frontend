@@ -18,7 +18,16 @@ export class OrdersComponent implements OnInit, OnDestroy{
     }
 
     get orders(): FullOrder[]{
-        return this._orders
+      this._orders = this._orders.map((order) => {
+        const timestamp = order.creationDate;
+        const date = new Date(timestamp);
+        const formattedDate = date.toLocaleString(); // Adjust this based on your desired format
+        order.creationDate = formattedDate;
+
+        return order;
+      });
+
+      return this._orders
     }
 
     private getOrders() {
