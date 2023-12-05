@@ -201,10 +201,6 @@ button:not([aria-disabled]):active {
     box-shadow: #d4dfdf 4px 4px 0 0, azure 4px 4px 0 1px;
 }
 
-.search-button {
-
-}
-
 .filter-buttons {
     display: flex;
     justify-content: space-around;
@@ -214,6 +210,11 @@ button:not([aria-disabled]):active {
 .view-button {
     background: azure;
     box-shadow: #d4dfdf 4px 4px 0 0, azure 4px 4px 0 1px;
+}
+
+.active-page-button {
+    background: yellow;
+    box-shadow: #edbb34 4px 4px 0 0, gold 4px 4px 0 1px;
 }
 
 .edit-button {
@@ -233,12 +234,18 @@ button:not([aria-disabled]):active {
 
 select{
     height: 1.5em;
+    border: 1px #1b1b1b solid;
+    border-radius: 10px;
+    padding: 1px 6px;
 }
 
 input {
     height: 1.5em;
     margin-top: 5px;
-    width: 100%;
+    width: 95%;
+    border: 1px #1b1b1b solid;
+    border-radius: 10px;
+    padding: 1px 6px;
 }
 
 label {

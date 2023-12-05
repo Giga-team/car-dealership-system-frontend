@@ -32,11 +32,17 @@
         </div>
         <div class="pagination-container">
             <div class="pagination-buttons">
-                <button class="edit-button"><<</button>
-                <button class="view-button">1</button>
-                <button class="view-button">2</button>
-                <button class="view-button">3</button>
-                <button class="edit-button">>></button>
+<!--                <button class="edit-button" [disabled]="numberOfPages === 1"><<</button>-->
+                <button *ngFor="let pageNumber of generatePagesButtons()"
+                        class="view-button"
+                        (click)="selectPage(pageNumber)"
+                        [ngClass]="isActivePage(pageNumber) ? 'edit-button' : 'view-button'">
+                    {{pageNumber}}
+                </button>
+<!--                <button class="view-button" >1</button>-->
+<!--                <button class="view-button" >2</button>-->
+<!--                <button class="view-button" >3</button>-->
+<!--                <button class="edit-button" [disabled]="numberOfPages === numberOfPages">>></button>-->
             </div>
             <button class="create-button" (click)="createCar()">Add</button>
         </div>
@@ -71,7 +77,7 @@
                     <input type="text"
                            name="engineCapacityLowerBound"
                            [(ngModel)]="carFilter.engineCapacityLowerBound"/>
-                    <span>-</span>
+                    <span>—</span>
                     <input type="text"
                            name="engineCapacityUpperBound"
                            [(ngModel)]="carFilter.engineCapacityUpperBound"/>
@@ -83,7 +89,7 @@
                     <input type="text"
                            name="powerLowerBound"
                            [(ngModel)]="carFilter.powerLowerBound"/>
-                    <span>-</span>
+                    <span>—</span>
                     <input type="text"
                            name="powerUpperBound"
                            [(ngModel)]="carFilter.powerUpperBound"/>
@@ -111,7 +117,7 @@
                     <input type="text"
                            name="priceLowerBound"
                            [(ngModel)]="carFilter.priceLowerBound"/>
-                    <span>-</span>
+                    <span>—</span>
                     <input type="text"
                            name="priceUpperBound"
                            [(ngModel)]="carFilter.priceUpperBound"/>
