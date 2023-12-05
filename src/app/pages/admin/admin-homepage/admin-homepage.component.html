@@ -30,11 +30,103 @@
                 <button class="delete-button" (click)="deleteCar(car.id)">Delete</button>
             </div>
         </div>
+        <div class="pagination-container">
+            <div class="pagination-buttons">
+<!--                <button class="edit-button" [disabled]="numberOfPages === 1"><<</button>-->
+                <button *ngFor="let pageNumber of generatePagesButtons()"
+                        class="view-button"
+                        (click)="selectPage(pageNumber)"
+                        [ngClass]="isActivePage(pageNumber) ? 'edit-button' : 'view-button'">
+                    {{pageNumber}}
+                </button>
+<!--                <button class="view-button" >1</button>-->
+<!--                <button class="view-button" >2</button>-->
+<!--                <button class="view-button" >3</button>-->
+<!--                <button class="edit-button" [disabled]="numberOfPages === numberOfPages">>></button>-->
+            </div>
+            <button class="create-button" (click)="createCar()">Add</button>
+        </div>
     </div>
     <div class="filter-bar">
         <div class="filter-item">
-
+            <h3>Search</h3>
+            <div class="input-group">
+                <label>Article</label>
+                <input type="text"
+                       name="article"
+                       placeholder="Article"
+                       [(ngModel)]="carFilter.article"/>
+            </div>
+            <div class="input-group">
+                <label>Model</label>
+                <input type="text"
+                       name="model"
+                       placeholder="Model"
+                       [(ngModel)]="carFilter.model"/>
+            </div>
+            <div class="input-group">
+                <label>Brand</label>
+                <input type="text"
+                       name="brand"
+                       placeholder="Brand"
+                       [(ngModel)]="carFilter.brand"/>
+            </div>
+            <div class="input-group">
+                <label>Engine capacity(L)</label>
+                <div class="input-range">
+                    <input type="text"
+                           name="engineCapacityLowerBound"
+                           [(ngModel)]="carFilter.engineCapacityLowerBound"/>
+                    <span>—</span>
+                    <input type="text"
+                           name="engineCapacityUpperBound"
+                           [(ngModel)]="carFilter.engineCapacityUpperBound"/>
+                </div>
+            </div>
+            <div class="input-group">
+                <label>Power(HP)</label>
+                <div class="input-range">
+                    <input type="text"
+                           name="powerLowerBound"
+                           [(ngModel)]="carFilter.powerLowerBound"/>
+                    <span>—</span>
+                    <input type="text"
+                           name="powerUpperBound"
+                           [(ngModel)]="carFilter.powerUpperBound"/>
+                </div>
+            </div>
+            <div class="input-group">
+                <label>Number of seats</label>
+                <input type="number"
+                       name="numberOfSeats"
+                       [(ngModel)]="carFilter.numberOfSeats"/>
+            </div>
+            <div class="input-group">
+                <div class="gear-box-selector">
+                    <label>Gear box</label>
+                    <select id="gear-box" name="gear_box" [(ngModel)]="carFilter.gearBox">
+                        <option value="">-</option>
+                        <option value="AUTOMATIC">Automatic</option>
+                        <option value="MECHANIC">Mechanic</option>
+                    </select>
+                </div>
+            </div>
+            <div class="input-group">
+                <label>Price</label>
+                <div class="input-range">
+                    <input type="text"
+                           name="priceLowerBound"
+                           [(ngModel)]="carFilter.priceLowerBound"/>
+                    <span>—</span>
+                    <input type="text"
+                           name="priceUpperBound"
+                           [(ngModel)]="carFilter.priceUpperBound"/>
+                </div>
+            </div>
+            <div class="filter-buttons">
+                <button class="search-button" (click)="search()">Search</button>
+                <button class="search-button" (click)="reset()">Reset</button>
+            </div>
         </div>
-
     </div>
 </div>

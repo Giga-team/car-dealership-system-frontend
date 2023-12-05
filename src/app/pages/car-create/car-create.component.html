@@ -1,0 +1,77 @@
+<div class="container">
+    <div class="header">
+        <div>
+            <img id="logo-icon" src="../assets/images/logo.png" alt="logo">
+        </div>
+        <div class="user-container" routerLink = "/user-cabinet">
+            <img id="user-icon" src="../assets/images/user-icon.png" alt="user-logo">
+        </div>
+    </div>
+    <div class="aside-bar">
+        <ul class="aside-bar-top-list">
+            <li routerLink = "/catalogue"><h3>Catalog</h3></li>
+            <li routerLink = "/users"><h3>Users</h3></li>
+            <li routerLink = "/orders"><h3>Orders</h3></li>
+        </ul>
+        <ul class="aside-bar-bottom-list">
+            <li routerLink = "/about"><h3>About</h3></li>
+            <li routerLink = "/help"><h3>Help</h3></li>
+        </ul>
+    </div>
+    <div class="main">
+        <div class="items" *ngIf="car">
+            <br>
+            <h2>Create Car</h2>
+            <form (ngSubmit)="createCar()">
+                <div class="form-container">
+                    <div class="column">
+                        <div class="form-group">
+                            <label for="brand">Brand:</label>
+                            <input type="text" id="brand" name="brand" [(ngModel)]="car.brand">
+                        </div>
+                        <div class="form-group">
+                            <label for="model">Model:</label>
+                            <input type="text" id="model" name="model" [(ngModel)]="car.model">
+                        </div>
+                        <div class="form-group">
+                            <label for="engine_capacity">Engine capacity:</label>
+                            <input type="text" id="engine_capacity" name="engine_capacity" [(ngModel)]="car.engineCapacity">
+                        </div>
+                        <div class="form-group">
+                            <label for="power">Power(HP):</label>
+                            <input type="text" id="power" name="power" [(ngModel)]="car.power">
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div class="form-group">
+                            <label for="number_of_seats">Number of seats:</label>
+                            <input type="text" id="number_of_seats" name="number_of_seats" [(ngModel)]="car.numberOfSeats">
+                        </div>
+                        <div class="form-group">
+                            <label for="gear_box">GearBox:</label>
+                            <select id="gear_box" name="gear_box" [(ngModel)]="car.gearBox">
+                                <option value="AUTOMATIC">AUTOMATIC</option>
+                                <option value="MECHANIC">MECHANIC</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="price">Price:</label>
+                            <input type="text" id="price" name="price" [(ngModel)]="car.price">
+                        </div>
+                        <div class="form-group">
+                            <label for="article">Article:</label>
+                            <input type="text" id="article" name="article" [ngModel]="car.article" readonly>
+                        </div>
+                    </div>
+                </div>
+                <div class="button-group">
+                    <button class="cancel-button" type="button" (click)="back()">Back</button>
+                    <button class="save-button" type="submit">Create</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="filter-bar">
+
+    </div>
+</div>
