@@ -14,8 +14,6 @@ export class UserService {
     constructor(private http: HttpClient) {}
 
     public getUser(userId: number):Observable<ApiResponse<IdentifiedUser>>{
-        console.log(userId);
-
         return this.http.get<ApiResponse<IdentifiedUser>>(`${this.userUrl}/users/${userId}`, { observe: 'response'})
             .pipe(
                 map((response: HttpResponse<ApiResponse<IdentifiedUser>>) => {
