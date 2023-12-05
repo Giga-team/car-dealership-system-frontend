@@ -20,20 +20,24 @@ export class StorageService {
 
     public getUserRole(): any {
         const user = window.sessionStorage.getItem(USER_KEY);
-        console.log(user);
         if (user) {
             const userData = JSON.parse(user);
-
-            console.log(userData);
-
             if (userData && userData.body && userData.body.userRole) {
-                console.log(userData.body);
-                console.log(userData.body.userRole);
                 return userData.body.userRole;
             }
         }
 
         return null;
+    }
+
+    public getUserId(): any {
+      const user = window.sessionStorage.getItem(USER_KEY);
+      if (user) {
+        const userData = JSON.parse(user);
+        if (userData && userData.body && userData.body.id) {
+          return userData.body.id;
+        }
+      }
     }
 
 

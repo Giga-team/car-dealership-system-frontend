@@ -1,1 +1,45 @@
-<p>orders works!</p>
+<div class="container">
+    <div class="header">
+        <div>
+            <img id="logo-icon" src="../assets/images/logo.png" alt="logo">
+        </div>
+        <div class="user-container" routerLink = "/user-cabinet">
+            <img id="user-icon" src="../assets/images/user-icon.png" alt="user-logo">
+        </div>
+    </div>
+    <div class="aside-bar">
+        <ul class="aside-bar-top-list">
+            <li routerLink="/catalogue"><h3>Catalog</h3></li>
+            <li routerLink="/users"><h3>Users</h3></li>
+            <li routerLink="/orders"><h3>Orders</h3></li>
+        </ul>
+        <ul class="aside-bar-bottom-list">
+            <li routerLink="/about"><h3>About</h3></li>
+            <li routerLink="/help"><h3>Help</h3></li>
+        </ul>
+    </div>
+    <div class="main">
+        <div class="main-item"
+             *ngFor="let order of orders">
+            <div class="text-container">
+                <div id="id-highlighter">{{order.id}}</div>
+                <div>{{order.carId}}</div>
+                <div>{{order.userId}}</div>
+                <div>{{order.status}}</div>
+                <div>{{order.creationDate}}</div>
+                <div>{{order.name}}</div>
+                <div>{{order.surname}}</div>
+                <div>{{order.email}}</div>
+                <div>{{order.phoneNumber}}</div>
+            </div>
+            <div class="button-container">
+<!--                <button class="edit-button" (click)="editOrder(order.id)">Edit</button>-->
+                <button class="view-button" (click)="viewOrder(order.id)">View</button>
+            </div>
+        </div>
+    </div>
+    <div class="filter-bar">
+        <div class="filter-item">
+        </div>
+    </div>
+</div>

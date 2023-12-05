@@ -20,40 +20,49 @@
     </div>
     <div class="main">
         <br>
-        <h2>Car Information</h2>
+        <h2>Order Information</h2>
         <div class="car-table">
             <div class="table-column">
                 <div class="table-row">
-                    <span class="field-label">Brand:</span>{{car.brand}}
+                    <span class="field-label">ID:</span>{{order.id}}
                 </div>
                 <div class="table-row">
-                    <span class="field-label">Model:</span>{{car.model}}
+                    <span class="field-label">CarID:</span>{{order.carId}}
                 </div>
                 <div class="table-row">
-                    <span class="field-label">Engine capacity:</span>{{car.engineCapacity}}
+                    <span class="field-label">UserID:</span>{{order.userId}}
                 </div>
                 <div class="table-row">
-                    <span class="field-label">Power:</span>{{car.power}}
+                    <label for="gear_box">Status:</label>
+                    <select id="gear_box" name="gear_box" [(ngModel)]="order.status">
+                        <option value="CREATED">CREATED</option>
+                        <option value="IN_PROGRESS">IN_PROGRESS</option>
+                        <option value="IN_PLACE">IN_PLACE</option>
+                        <option value="COMPLETE">COMPLETE</option>
+                    </select>
                 </div>
             </div>
             <div class="table-column">
                 <div class="table-row">
-                    <span class="field-label">Status:</span>{{car.status}}
+                    <span class="field-label">CreationDate:</span>{{order.creationDate}}
                 </div>
                 <div class="table-row">
-                    <span class="field-label">Number of seats:</span>{{car.numberOfSeats}}
+                    <span class="field-label">User name:</span>{{order.name}}
                 </div>
                 <div class="table-row">
-                    <span class="field-label">Gear box:</span>{{car.gearBox}}
+                    <span class="field-label">User surname:</span>{{order.surname}}
                 </div>
                 <div class="table-row">
-                    <span class="field-label">Price:</span>{{car.price}}
+                    <span class="field-label">Email:</span>{{order.email}}
+                </div>
+                <div class="table-row">
+                    <span class="field-label">Phone number:</span>{{order.phoneNumber}}
                 </div>
             </div>
         </div>
         <div class="button-group">
-            <button class="back-button" (click)="back()">Back</button>
-            <button class="save-button" type="submit" (click)="makeOrder()">Order</button>
+            <button class="cancel-button" type="button" (click)="back()">Back</button>
+            <button class="save-button" type="submit" (click)="updateOrder()">Save Changes</button>
         </div>
     </div>
     <div class="filter-bar">

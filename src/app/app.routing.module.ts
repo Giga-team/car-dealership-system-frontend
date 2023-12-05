@@ -13,6 +13,7 @@ import {UserCabinetComponent} from "./pages/user-cabinet/user-cabinet.component"
 import {UserViewComponent} from "./pages/user-view/user-view.component";
 import {UserEditComponent} from "./pages/user-edit/user-edit.component";
 import {CarCreateComponent} from "./pages/car-create/car-create.component";
+import {OrderViewComponent} from "./pages/order-view/order-view.component";
 
 const routes: Routes = [
   {
@@ -84,7 +85,12 @@ const routes: Routes = [
     path: 'user-edit/:id',
     title: 'User-Edit',
     component: UserEditComponent
-  }
+  },
+  {
+      path: 'order-view/:id',
+      title: 'Order-View',
+      component: OrderViewComponent
+  },
 ]
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
