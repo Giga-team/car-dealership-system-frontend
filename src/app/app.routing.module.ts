@@ -52,6 +52,11 @@ const routes: Routes = [
     component: UserCabinetComponent
   },
   {
+    path: 'user-order/:id',
+    title: 'Order',
+    component: OrderViewComponent
+  },
+  {
     path: 'car-create',
     title: 'New car',
     component: CarCreateComponent

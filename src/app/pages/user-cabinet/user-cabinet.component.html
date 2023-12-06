@@ -19,19 +19,18 @@
         </ul>
     </div>
     <div class="main">
-        <div class="main-item">
+        <div class="main-item"
+         *ngFor="let order of orders">
             <div class="text-container">
-
+                <div>{{order.id}}</div>
+                <div>{{order.creationDate}}</div>
+                <div>{{order.status}}</div>
+                <div>Car id: {{order.carId}}</div>
             </div>
             <div class="button-container">
-                <button class="view-button" (click)="viewOrder()">View</button>
+                <button class="view-button" (click)="viewOrder(order.id)">View</button>
             </div>
         </div>
-<!--        <div class="main-item">-->
-<!--            <div class="text-container">-->
-
-<!--            </div>-->
-<!--        </div>-->
     </div>
     <div class="filter-bar">
         <div class="user-info">

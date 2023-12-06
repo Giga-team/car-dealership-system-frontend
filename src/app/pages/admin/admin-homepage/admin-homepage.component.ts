@@ -59,14 +59,6 @@ export class AdminHomepageComponent implements OnInit, OnDestroy {
         return this._carFilter
     }
 
-    get carPage(): Page{
-        return this._carPage;
-    }
-
-    get numberOfPages(): number {
-        return this._carPage.pagesCount
-    }
-
     generatePagesButtons(): number[] {
         return generatePagesNumbers(this._carPage.pagesCount);
     }

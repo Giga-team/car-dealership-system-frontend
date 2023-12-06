@@ -19,7 +19,6 @@
 
 .user-container {
     display: flex;
-    width: 100px;
     align-items: center;
     gap: 20px;
 }
@@ -122,6 +121,11 @@ li:hover {
     display: flex;
     align-items: center;
     justify-content: space-between;
+}
+
+.text-container {
+    display: flex;
+    gap: 20px;
 }
 
 .user-info {
