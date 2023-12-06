@@ -140,6 +140,16 @@ button {
     text-align: center;
 }
 
+.save-button {
+    background: #2ba234;
+    box-shadow: #d4dfdf 4px 4px 0 0, azure 4px 4px 0 1px;
+}
+
+.cancel-button {
+    background: #e8480c;
+    box-shadow: #be3d11 4px 4px 0 0, #de4512 4px 4px 0 1px;
+}
+
 button:active {
     box-shadow: rgba(0,0,0,.125) 0 3px 5px inset;
     outline: 0;
@@ -212,3 +222,4 @@ table {
     justify-content: center;
     gap: 100px;
 }
+

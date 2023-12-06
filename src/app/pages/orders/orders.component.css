@@ -56,12 +56,13 @@
     text-align: center;
 }
 
-.aside-bar-top-list li{
+.aside-bar-top-list li {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 3em;
 }
+
 .aside-bar-bottom-list {
     list-style: none;
     margin: 0;
@@ -70,7 +71,7 @@
     text-align: center;
 }
 
-.aside-bar-bottom-list li{
+.aside-bar-bottom-list li {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -87,11 +88,10 @@ li:hover {
 .filter-bar {
     background: azure;
     grid-area: filter-bar;
-    padding: 10% 10%;
+    padding: 5% 5%;
     gap: 10px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     color: #1b1b1b;
     border-left: solid #1b1b1b 2px;
 }
@@ -160,12 +160,12 @@ button {
 }
 
 button:active {
-    box-shadow: rgba(0,0,0,.125) 0 3px 5px inset;
+    box-shadow: rgba(0, 0, 0, .125) 0 3px 5px inset;
     outline: 0;
 }
 
 button:not([aria-disabled]):active {
-    box-shadow: rgba(0,0,0,.125) 0 3px 5px inset;
+    box-shadow: rgba(0, 0, 0, .125) 0 3px 5px inset;
     transform: translate(2px, 2px);
 }
 
@@ -190,4 +190,73 @@ h4 {
 
 h3 {
     font-family: Ukraine-Thin, sans-serif;
+}
+
+.status-selector {
+    display: flex;
+    justify-content: space-between;
+}
+
+#status-selector {
+    width: 60%;
+}
+
+input {
+    height: 1.5em;
+    margin-top: 5px;
+    width: 95%;
+    border: 1px #1b1b1b solid;
+    border-radius: 10px;
+    padding: 1px 6px;
+}
+
+label {
+    font-family: Ukraine-Thin, sans-serif;
+}
+
+select {
+    height: 1.5em;
+    border: 1px #1b1b1b solid;
+    border-radius: 10px;
+    padding: 1px 6px;
+}
+
+.filter-buttons {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 40px;
+}
+
+.filter-item {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.input-range {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.pagination-container {
+    display: flex;
+    width: 100%;
+    bottom: 50px;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.pagination-buttons {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    left: 30%;
+    right: 30%;
+    bottom: 45px;
+}
+
+.pagination-buttons button{
+    margin-right: 10px;
 }

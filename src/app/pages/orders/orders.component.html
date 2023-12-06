@@ -3,7 +3,7 @@
         <div>
             <img id="logo-icon" src="../assets/images/logo.png" alt="logo">
         </div>
-        <div class="user-container" routerLink = "/user-cabinet">
+        <div class="user-container" routerLink="/user-cabinet">
             <img id="user-icon" src="../assets/images/user-icon.png" alt="user-logo">
         </div>
     </div>
@@ -33,13 +33,83 @@
                 <div>{{order.phoneNumber}}</div>
             </div>
             <div class="button-container">
-<!--                <button class="edit-button" (click)="editOrder(order.id)">Edit</button>-->
+                <!--                <button class="edit-button" (click)="editOrder(order.id)">Edit</button>-->
                 <button class="view-button" (click)="viewOrder(order.id)">View</button>
+            </div>
+        </div>
+        <div class="pagination-container">
+            <div class="pagination-buttons">
+                <button *ngFor="let pageNumber of generatePagesButtons()"
+                        class="view-button"
+                        (click)="selectPage(pageNumber)"
+                        [ngClass]="isActivePage(pageNumber) ? 'edit-button' : 'view-button'">
+                    {{pageNumber}}
+                </button>
             </div>
         </div>
     </div>
     <div class="filter-bar">
         <div class="filter-item">
+            <h3>Search</h3>
+            <div class="input-group">
+                <label>Name</label>
+                <input type="text"
+                       name="name"
+                       placeholder="Name"
+                       [(ngModel)]="orderFilter.name"/>
+            </div>
+            <div class="input-group">
+                <label>Surname</label>
+                <input type="text"
+                       name="surname"
+                       placeholder="Surname"
+                       [(ngModel)]="orderFilter.surname"/>
+            </div>
+            <div class="input-group">
+                <label>Email</label>
+                <input type="text"
+                       name="email"
+                       placeholder="email@gmail.com"
+                       [(ngModel)]="orderFilter.email"/>
+            </div>
+            <div class="input-group">
+                <label>Phone number</label>
+                <input type="text"
+                       name="phoneNumber"
+                       placeholder="Phone number"
+                       [(ngModel)]="orderFilter.phoneNumber"/>
+            </div>
+            <div class="input-group">
+                <label>Creation date</label>
+                <div class="input-range">
+                    <input type="datetime-local"
+                           name="creationDateLowerBound"
+                           [ngModel]="orderFilter.creationDateLowerBound | date:'yyyy-MM-ddTHH:mm'"
+                           (ngModelChange)="orderFilter.creationDateLowerBound = fromDatetimeLocal($event)"/>
+                    <span>—</span>
+                    <input type="datetime-local"
+                           name="creationDateUpperBound"
+                           [ngModel]="orderFilter.creationDateUpperBound | date:'yyyy-MM-ddTHH:mm'"
+                           (ngModelChange)="orderFilter.creationDateUpperBound = fromDatetimeLocal($event)"/>
+                </div>
+            </div>
+            <div class="input-group">
+                <div class="status-selector">
+                    <label>Status</label>
+                    <select id="status" name="status" [(ngModel)]="orderFilter.status">
+                        <option value="">-</option>
+                        <option value="CREATED">Created</option>
+                        <option value="IN_PROGRESS">In progress</option>
+                        <option value="IN_PLACE">In place</option>
+                        <option value="COMPLETE">Complete</option>
+                        <option value="CANCELLED">Cancelled</option>
+                    </select>
+                </div>
+            </div>
+            <div class="filter-buttons">
+                <button class="search-button" (click)="search()">Search</button>
+                <button class="search-button" (click)="reset()">Reset</button>
+            </div>
         </div>
     </div>
 </div>

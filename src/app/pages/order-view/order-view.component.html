@@ -35,10 +35,11 @@
                 <div class="table-row">
                     <label for="gear_box">Status:</label>
                     <select id="gear_box" name="gear_box" [(ngModel)]="order.status">
-                        <option value="CREATED">CREATED</option>
-                        <option value="IN_PROGRESS">IN_PROGRESS</option>
-                        <option value="IN_PLACE">IN_PLACE</option>
-                        <option value="COMPLETE">COMPLETE</option>
+                        <option value="CREATED">Created</option>
+                        <option value="IN_PROGRESS">In progress</option>
+                        <option value="IN_PLACE">In place</option>
+                        <option value="COMPLETE">Complete</option>
+                        <option value="CANCELLED">Canceled</option>
                     </select>
                 </div>
             </div>
@@ -61,8 +62,9 @@
             </div>
         </div>
         <div class="button-group">
-            <button class="cancel-button" type="button" (click)="back()">Back</button>
-            <button class="save-button" type="submit" (click)="updateOrder()">Save Changes</button>
+            <button class="back-button" type="button" (click)="back()">Back</button>
+            <button class="cancel-button" type="button" (click)="cancel()">Cancel</button>
+            <button class="save-button" type="submit" (click)="updateOrder()">Save</button>
         </div>
     </div>
     <div class="filter-bar">
