@@ -9,11 +9,11 @@ import {CreateOrder} from "../models/order/create-order.interface";
     providedIn: 'root'
 })
 export class OrderService {
-    private userUrl = "http://localhost:8080/v1/car-dealership-system-api";
+    private orderUrl = "http://localhost:8080/v1/car-dealership-system-api";
     constructor(private http: HttpClient) {}
 
     public getOrder(orderId: number):Observable<ApiResponse<FullOrder>>{
-        return this.http.get<ApiResponse<FullOrder>>(`${this.userUrl}/orders/${orderId}`, { observe: 'response'})
+        return this.http.get<ApiResponse<FullOrder>>(`${this.orderUrl}/orders/${orderId}`, { observe: 'response'})
             .pipe(
                 map((response: HttpResponse<ApiResponse<FullOrder>>) => {
                     return {
@@ -28,7 +28,7 @@ export class OrderService {
 
     public createOrder(order: CreateOrder): Observable<ApiResponse<number>>{
 
-        return this.http.post<ApiResponse<number>>(`${this.userUrl}/orders`, order, { observe: 'response' })
+        return this.http.post<ApiResponse<number>>(`${this.orderUrl}/orders`, order, { observe: 'response' })
             .pipe(
                 map((response: HttpResponse<ApiResponse<number>>) => {
                     return {
@@ -42,7 +42,7 @@ export class OrderService {
     }
 
     public updateOrder(orderId: number, status: string): Observable<ApiResponse<void>>{
-        return this.http.put<ApiResponse<void>>(`${this.userUrl}/orders/${orderId}/status`,{status: status}, { observe: 'response'})
+        return this.http.put<ApiResponse<void>>(`${this.orderUrl}/orders/${orderId}/status`,{status: status}, { observe: 'response'})
             .pipe(
                 map((response: HttpResponse<ApiResponse<void>>) => {
                     return {
@@ -57,7 +57,7 @@ export class OrderService {
 
     public getOrderPage(query: string = '', page: number = 0, limit: number = 20): Observable<ApiResponse<FullOrder[]>> {
         return this.http.get<ApiResponse<FullOrder[]>>(
-            `${this.userUrl}/orders/page?query=${query}&page=${page}&limit=${limit}`,
+            `${this.orderUrl}/orders/page?query=${query}&page=${page}&limit=${limit}`,
             { observe: 'response'})
             .pipe(
                 map((response: HttpResponse<ApiResponse<FullOrder[]>>) => {
@@ -70,6 +70,20 @@ export class OrderService {
                 }),
                 catchError(this.handleHttpError)
             )
+    }
+
+    public getOrdersCount(query: string = ''): Observable<ApiResponse<number>> {
+        return this.http.get<ApiResponse<number>>(`${this.orderUrl}/orders/count?query=${query}`, { observe: 'response' })
+        .pipe(
+            map((response: HttpResponse<ApiResponse<number>>) => {
+                return {
+                    body: response.body?.body??0,
+                    responseCode: response.status,
+                    message: response.ok ? 'Orders count retrieved successfully' : "Failed to retrieve orders count"
+                }
+            }),
+            catchError(this.handleHttpError)
+        )
     }
 
     private handleHttpError(error: HttpErrorResponse): Observable<never> {

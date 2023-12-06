@@ -86,10 +86,7 @@ export class AdminHomepageComponent implements OnInit, OnDestroy {
     }
 
     isActivePage(uiPageNumber: number) {
-        const res: boolean = this._carPage.currentPage === (Number(uiPageNumber) - 1);
-        console.log('Is active page: ', `uiPageNumber : ${uiPageNumber}, currentPage: ${this._carPage.currentPage}, result: ${res}`)
-        console.log('Is active page: ', `uiPageNumber : ${typeof Number(uiPageNumber)}, currentPage: ${typeof this._carPage.currentPage}, result: ${res}`)
-        return res;
+        return this._carPage.currentPage === (Number(uiPageNumber) - 1);
     }
 
     search() {

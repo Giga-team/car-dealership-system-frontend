@@ -32,17 +32,12 @@
         </div>
         <div class="pagination-container">
             <div class="pagination-buttons">
-<!--                <button class="edit-button" [disabled]="numberOfPages === 1"><<</button>-->
                 <button *ngFor="let pageNumber of generatePagesButtons()"
                         class="view-button"
                         (click)="selectPage(pageNumber)"
                         [ngClass]="isActivePage(pageNumber) ? 'edit-button' : 'view-button'">
                     {{pageNumber}}
                 </button>
-<!--                <button class="view-button" >1</button>-->
-<!--                <button class="view-button" >2</button>-->
-<!--                <button class="view-button" >3</button>-->
-<!--                <button class="edit-button" [disabled]="numberOfPages === numberOfPages">>></button>-->
             </div>
             <button class="create-button" (click)="createCar()">Add</button>
         </div>
